@@ -141,6 +141,8 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--sun);border-colo
 <section id="teach" class="card hide">
 <h2 style="font-size:30px;margin-bottom:6px">Öğretmen paneli</h2>
 <p id="tstat" class="hint" style="margin:0 0 14px"></p>
+<form id="tlogin" class="form hide"><label>Öğretmen e-postası<input type="email" id="lemail" autocomplete="email" required></label><button class="go" type="submit" id="lsend">Giriş bağlantısı gönder</button></form>
+<button class="link hide" id="tlogout" type="button">Çıkış yap</button>
 <form id="tform" class="form">
 <div class="two">
 <label>Seviye<select id="fl"><option value="ilk">İlkokul</option><option value="orta">Ortaokul</option><option value="lise">Lise</option></select></label>
@@ -189,6 +191,7 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--sun);border-colo
 <p class="note">Hazır sorular müfredat düzeyine göre seçilmiş örnek bir bankadır. Öğretmenler, panelden kendi sorularını ekleyebilir. "Open Trivia DB" etiketli sorular <a href="https://opentdb.com" rel="noopener">Open Trivia Database</a> sorularından Türkçeye uyarlanmıştır ve <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr" rel="noopener">CC BY-SA 4.0</a> lisanslıdır.</p>
 </div>
 
+<script src="config.js"></script>
 <script>
 {
 const CATS={cog:'Coğrafya',tarih:'Tarih',fen:'Fen Bilimleri',mat:'Matematik',spor:'Spor',sanat:'Sanat ve Edebiyat',gk:'Genel Kültür'};
@@ -312,13 +315,18 @@ $('joker').onclick=()=>{if(!G.joker||!$('info').classList.contains('hide'))retur
 const it=G.qs[G.i];const wrong=shuf(G.opts.map((o,k)=>o===it.a?-1:k).filter(k=>k>=0)).slice(0,2);
 const btns=$('ans').querySelectorAll('button');wrong.forEach(k=>btns[k].classList.add('gone'))};
 
-// Öğretmen soruları (paylaşılan veritabanı)
+// Öğretmen soruları: claude.ai'de artifact veritabanı, başka yerde (GitHub Pages) Supabase
 const clean=v=>String(v==null?'':v).slice(0,400);
+const tidy=list=>list.map(x=>({id:String(x.id),lvl:clean(x.lvl),cat:clean(x.cat),q:clean(x.q),a:clean(x.a),w:Array.isArray(x.w)?x.w.slice(0,3).map(clean):[],e:clean(x.e)}))
+.filter(t=>LVLS[t.lvl]&&CATS[t.cat]&&t.q&&t.a&&t.w.length===3);
+let B=null,sb=null,email=null;// B: {kind, add(t), del(id)}
 function setTeachState(){
-const f=$('tform');
-if(!dbRef){$('tstat').textContent='Paylaşılan soru veritabanına şu an bağlanılamıyor. Hazır soru bankası kullanılmaya devam ediyor.';f.classList.add('hide');return}
-if(canWrite===false){$('tstat').textContent='Bu sayfada soru eklemek için düzenleme yetkisi gerekir. Eklenmiş soruları aşağıda görebilirsin.';f.classList.add('hide');return}
-$('tstat').textContent='Eklediğin sorular, bu sayfayı açan herkesin oyununa seçilen seviye ve konuda karışır.';f.classList.remove('hide');
+const f=$('tform'),lf=$('tlogin'),lo=$('tlogout');lf.classList.add('hide');lo.classList.add('hide');f.classList.add('hide');
+if(!B){$('tstat').textContent='Paylaşılan soru veritabanına şu an bağlanılamıyor. Hazır soru bankası kullanılmaya devam ediyor.';return}
+if(B.kind==='supabase'&&!email){$('tstat').textContent='Soru eklemek için öğretmen e-postanla giriş yap. E-postana bir giriş bağlantısı gelecek.';lf.classList.remove('hide');return}
+if(B.kind==='supabase')lo.classList.remove('hide');
+if(canWrite===false){$('tstat').textContent=B.kind==='supabase'?`${email} öğretmen listesinde yok. Yöneticiden e-postanı eklemesini iste.`:'Bu sayfada soru eklemek için düzenleme yetkisi gerekir. Eklenmiş soruları aşağıda görebilirsin.';return}
+$('tstat').textContent=(email?email+' olarak giriş yaptın. ':'')+'Eklediğin sorular, bu siteyi açan herkesin oyununa seçilen seviye ve konuda karışır.';f.classList.remove('hide');
 }
 function renderT(){
 const box=$('tlist');
@@ -326,35 +334,59 @@ if(!TQ.length){box.innerHTML='<div>Henüz öğretmen sorusu eklenmedi.</div>';re
 box.innerHTML=TQ.map(()=>'<div><span class="m"></span><br><b class="qq"></b><br><strong>Doğru: </strong><i class="aa"></i><button class="del" type="button">Sil</button></div>').join('');
 box.querySelectorAll(':scope>div').forEach((d,i)=>{const t=TQ[i];
 d.querySelector('.m').textContent=(LVLS[t.lvl]||'')+' · '+(CATS[t.cat]||'');d.querySelector('.qq').textContent=t.q;d.querySelector('.aa').textContent=t.a;
-const del=d.querySelector('.del');if(canWrite===false)del.remove();else del.onclick=async()=>{del.disabled=true;try{await dbRef.collection('sorular').doc(t.id).delete()}catch(e){del.disabled=false;$('tmsg').textContent='Silinemedi.'}}});
+const del=d.querySelector('.del');if(!B||canWrite!==true&&!(B.kind==='claude'&&canWrite===null))del.remove();else del.onclick=async()=>{del.disabled=true;try{await B.del(t.id)}catch(e){del.disabled=false;$('tmsg').textContent='Silinemedi.'}}});
 }
+const gotT=list=>{TQ=tidy(list);refresh();if(!$('teach').classList.contains('hide'))renderT()};
 $('openT').onclick=()=>{setTeachState();renderT();show('teach');window.scrollTo({top:0})};
 $('tback').onclick=home;
-$('tform').addEventListener('submit',async e=>{e.preventDefault();if(!dbRef)return;
+$('tform').addEventListener('submit',async e=>{e.preventDefault();if(!B)return;
 const w=[$('fw1').value,$('fw2').value,$('fw3').value].map(s=>s.trim());const a=$('fa').value.trim(),q=$('fq').value.trim();
 if(!q||!a||w.some(x=>!x)){$('tmsg').textContent='Soru, doğru cevap ve üç yanlış cevabın hepsi gerekli.';return}
 if(new Set([a,...w]).size<4){$('tmsg').textContent='Seçenekler birbirinden farklı olmalı.';return}
 $('tsave').disabled=true;$('tmsg').textContent='Kaydediliyor…';
-try{await dbRef.collection('sorular').add({lvl:$('fl').value,cat:$('fc').value,q,a,w,e:$('fe').value.trim(),at:Date.now()});
+try{await B.add({lvl:$('fl').value,cat:$('fc').value,q,a,w,e:$('fe').value.trim()});
 ['fq','fa','fw1','fw2','fw3','fe'].forEach(id=>$(id).value='');$('tmsg').textContent='Kaydedildi. Bir soru daha ekleyebilirsin.'}
-catch(err){if(err&&err.code==='invalid_argument'){canWrite=false;setTeachState()}$('tmsg').textContent=err&&err.code==='quota_exceeded'?'Soru kapasitesi doldu; bazı soruları silin.':'Kaydedilemedi. Düzenleme yetkin olmayabilir.'}
+catch(err){if(err&&err.code==='invalid_argument'){canWrite=false;setTeachState()}$('tmsg').textContent=err&&err.code==='quota_exceeded'?'Soru kapasitesi doldu; bazı soruları silin.':'Kaydedilemedi. Soru ekleme yetkin olmayabilir.'}
 $('tsave').disabled=false});
+$('tlogin').addEventListener('submit',async e=>{e.preventDefault();if(!sb)return;
+const m=$('lemail').value.trim();if(!m)return;$('lsend').disabled=true;$('tmsg').textContent='Gönderiliyor…';
+const {error}=await sb.auth.signInWithOtp({email:m,options:{emailRedirectTo:location.origin+location.pathname}});
+$('lsend').disabled=false;$('tmsg').textContent=error?'Bağlantı gönderilemedi: '+error.message:'Giriş bağlantısı '+m+' adresine gönderildi. E-postadaki bağlantıya bu cihazda tıkla.'});
+$('tlogout').onclick=async()=>{if(sb)await sb.auth.signOut()};
 
-(async()=>{
-try{
-if(!window.claude||!claude.use)return setTeachState();
-const db=await claude.use('db');if(!db)return setTeachState();dbRef=db;
+async function useClaude(){
+const db=await claude.use('db');if(!db)return false;
+B={kind:'claude',add:t=>db.collection('sorular').add({...t,at:Date.now()}),del:id=>db.collection('sorular').doc(id).delete()};
 const user=await claude.use('user');
 if(user){try{const c=await user.canEdit();canWrite=c===true?true:c===false?false:null}catch(e){canWrite=null}}
 setTeachState();
 let to=setTimeout(()=>{$('tstat').textContent='Öğretmen soruları henüz yüklenemedi; hazır soru bankası kullanılıyor.'},10000);
-db.collection('sorular').limit(1000).onSnapshot(snap=>{
-if(!snap.metadata.fromCache){clearTimeout(to)}
-TQ=snap.docs.map(d=>{const x=d.data()||{};return{id:d.id,lvl:clean(x.lvl),cat:clean(x.cat),q:clean(x.q),a:clean(x.a),w:Array.isArray(x.w)?x.w.slice(0,3).map(clean):[],e:clean(x.e)}})
-.filter(t=>LVLS[t.lvl]&&CATS[t.cat]&&t.q&&t.a&&t.w.length===3);
-refresh();if(!$('teach').classList.contains('hide'))renderT();
-},()=>{clearTimeout(to)});
-}catch(e){setTeachState()}
+db.collection('sorular').limit(1000).onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(to);gotT(snap.docs.map(d=>({id:d.id,...(d.data()||{})})))},()=>clearTimeout(to));
+return true;
+}
+function loadScript(src){return new Promise((ok,no)=>{const s=document.createElement('script');s.src=src;s.onload=ok;s.onerror=no;document.head.appendChild(s)})}
+async function useSupabase(){
+const C=window.BR_CONFIG||{};if(!C.supabaseUrl||!C.supabaseAnonKey)return false;
+if(!window.supabase)await loadScript('vendor/supabase-2.118.0.js');
+sb=window.supabase.createClient(C.supabaseUrl,C.supabaseAnonKey);
+const load=async()=>{const {data,error}=await sb.from('sorular').select('id,lvl,cat,q,a,w,e').order('eklenme',{ascending:true}).limit(1000);if(!error)gotT(data||[])};
+B={kind:'supabase',
+add:async t=>{const {error}=await sb.from('sorular').insert(t);if(error)throw error;await load()},
+del:async id=>{const {error}=await sb.from('sorular').delete().eq('id',id);if(error)throw error;await load()}};
+const onSession=async s=>{email=s&&s.user?s.user.email:null;canWrite=null;
+if(email){const {data,error}=await sb.rpc('ogretmen_mi');canWrite=!error&&data===true}
+setTeachState();renderT()};
+sb.auth.onAuthStateChange((_ev,s)=>{setTimeout(()=>onSession(s),0)});
+const {data}=await sb.auth.getSession();await onSession(data.session);
+await load();
+return true;
+}
+(async()=>{
+try{
+if(window.claude&&claude.use&&await useClaude())return;
+if(await useSupabase())return;
+}catch(e){}
+setTeachState();
 })();
 }
 

@@ -18,6 +18,9 @@
 | `index.html` | Uygulamanın tamamı (HTML, CSS, JavaScript) |
 | `sorular.json` | Projeye özel hazırlanmış Türkçe soru bankası |
 | `sorular-otdb.json` | Open Trivia Database'den Türkçeye uyarlanmış sorular |
+| `config.js` | Supabase bağlantı bilgileri |
+| `supabase/kurulum.sql` | Öğretmen soruları için veritabanı kurulumu |
+| `vendor/` | supabase-js 2.118.0 (MIT) |
 
 ## Çalıştırma
 
@@ -52,9 +55,21 @@ Seviye anahtarları `ilk`, `orta` ve `lise`dir. Konu anahtarlarının karşılı
 
 ## Öğretmen paneli ve veritabanı
 
-Öğretmen paneli, claude.ai artifact platformunun paylaşılan veritabanını (`sorular` koleksiyonu) kullanır. GitHub Pages'te ya da yerel sunucuda bu veritabanı bulunmadığından panel "bağlanılamıyor" mesajı gösterir. Uygulamanın geri kalanı JSON dosyalarıyla normal şekilde çalışır.
+GitHub Pages sürümünde öğretmen soruları **Supabase** veritabanında tutulur (`config.js` içindeki proje).
 
-Kalıcı soruları depoya eklemek için JSON dosyalarını düzenleyip commit etmeniz yeterlidir.
+- **Öğrenciler** giriş yapmadan oynar; öğretmen soruları seçilen seviye ve konudaki yarışmalara otomatik karışır.
+- **Öğretmenler** panelde e-posta adreslerini yazar, gelen giriş bağlantısına tıklar, ardından soru ekleyip silebilir.
+- Yalnızca `ogretmenler` tablosundaki e-postalar soru ekleyip silebilir. Bu kural veritabanında (Row Level Security) uygulanır; sayfadaki anahtar herkese açık olsa da başka kimse yazamaz.
+
+**Yeni öğretmen eklemek:** Supabase panelinde *SQL Editor*'ü açıp şunu çalıştırın:
+
+```sql
+insert into public.ogretmenler (email) values ('ogretmen@okul.k12.tr');
+```
+
+**Kendi Supabase projenizi kurmak:** `supabase/kurulum.sql` dosyasını yeni bir projenin SQL Editor'ünde çalıştırın. Proje adresini ve *publishable* anahtarı `config.js` dosyasına yazın. *Authentication → URL Configuration* bölümünde Site URL olarak sitenizin adresini girin.
+
+claude.ai'de yayınlanan sürümde panel, claude.ai'nin kendi veritabanını kullanır; iki sürümün öğretmen soruları birbirinden ayrıdır.
 
 ## Lisans ve kaynaklar
 
