@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilgi Rotası</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: neşeli, cesaretlendirici, çocuk dostu ama ciddi bilgi
+   IDEA: bir keşif haritası — her soru rotada bir durak, doğru cevap pasaporta damga
+   PICTURE: kıvrımlı rota üzerinde ilerleyen bayraklı kaşif piyonu
+   COLOUR and TYPE: gökyüzü mavisi zemin, güneş sarısı vurgu, mercan destek; Baloo 2 + Nunito
+   LAYOUT: tek sütun oyun kartı, üstte rota, altında soru ve büyük cevap düğmeleri */
+:root{color-scheme:light dark;
+--bg:light-dark(#2b9bf0,#0d2338);--bg2:light-dark(#1f86d6,#0a1a2b);
+--card:light-dark(#ffffff,#16324d);--ink:light-dark(#14233a,#eef5ff);--soft:light-dark(#5a6b82,#a9bdd6);
+--sun:#ffcf3f;--coral:light-dark(#ff6b4a,#ff8466);--ok:light-dark(#1d9e5a,#3fd08a);--bad:light-dark(#e0393e,#ff6b6f);
+--line:light-dark(#e3ebf5,#26476a);--chip:light-dark(#f2f7fd,#1d3d5e)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));min-height:100vh;color:var(--ink);font:16px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Baloo 2",Nunito,sans-serif;line-height:1.05;margin:0;text-wrap:balance}
+.wrap{max-width:760px;margin:0 auto;padding:clamp(16px,3vw,32px) max(4vw,14px) 48px}
+header{display:flex;align-items:center;gap:12px;color:#fff;margin-bottom:14px}
+header h1{font-size:clamp(32px,6vw,46px);font-weight:800}
+header p{margin:0;opacity:.9;font-weight:700}
+.logo{width:56px;height:56px;flex:none}
+.card{background:var(--card);border-radius:24px;padding:clamp(18px,3.5vw,30px);box-shadow:0 10px 0 rgba(0,0,0,.12),0 20px 40px rgba(0,0,0,.15)}
+.hide{display:none!important}
+.lbl{font-weight:800;margin:18px 0 8px;font-size:17px}
+.lbl:first-child{margin-top:0}
+.seg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.seg.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:600px){.seg.c4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.opt{appearance:none;border:3px solid var(--line);background:var(--chip);color:var(--ink);border-radius:16px;padding:12px 10px;font:800 16px/1.2 Nunito,sans-serif;cursor:pointer;min-height:56px;display:flex;flex-direction:column;align-items:center;gap:6px;transition:transform .12s}
+.opt svg{width:34px;height:34px}
+.opt small{font-weight:600;color:var(--soft);font-size:13px}
+.opt[aria-pressed=true]{border-color:var(--coral);background:light-dark(#fff1ec,#3a2a35)}
+.opt:hover{transform:translateY(-2px)}
+button:focus-visible{outline:4px solid var(--sun);outline-offset:2px}
+.go{appearance:none;border:0;background:var(--sun);color:#3b2a00;font:800 20px/1 "Baloo 2",sans-serif;border-radius:18px;padding:16px 22px;min-height:56px;cursor:pointer;box-shadow:0 5px 0 #d9a514;width:100%;margin-top:20px}
+.go:active{transform:translateY(3px);box-shadow:0 2px 0 #d9a514}
+.go.alt{background:var(--chip);color:var(--ink);box-shadow:0 5px 0 var(--line)}
+.row{display:flex;gap:10px;flex-wrap:wrap}.row>*{flex:1 1 180px}
+.best{margin-top:12px;color:var(--soft);font-size:14px;text-align:center}
+/* rota */
+.trail{background:var(--card);border-radius:24px 24px 0 0;padding:10px 14px 0;margin-bottom:-6px}
+.trail svg{display:block;width:100%;height:auto}
+.hud{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-weight:800;margin-bottom:12px}
+.pill{background:var(--chip);border-radius:999px;padding:6px 12px;font-size:14px;white-space:nowrap}
+.hearts svg{width:22px;height:22px;vertical-align:-5px}
+.bar{height:12px;background:var(--chip);border-radius:99px;overflow:hidden;margin-bottom:16px}
+.bar i{display:block;height:100%;background:var(--ok);border-radius:99px;transition:width .1s linear}
+.bar i.low{background:var(--bad)}
+.qtag{display:inline-block;font-size:13px;font-weight:800;color:var(--coral);margin-bottom:6px}
+#q{font-size:clamp(22px,4.2vw,30px);margin-bottom:18px}
+.ans{display:grid;gap:10px}
+.ans button{appearance:none;text-align:left;border:3px solid var(--line);background:var(--chip);color:var(--ink);border-radius:16px;padding:14px 16px;font:700 17px/1.3 Nunito,sans-serif;cursor:pointer;min-height:56px;display:flex;gap:12px;align-items:center}
+.ans b{flex:none;width:32px;height:32px;border-radius:10px;background:var(--card);display:grid;place-items:center;font-family:"Baloo 2"}
+.ans button.ok{border-color:var(--ok);background:light-dark(#e3f7ec,#173f33)}
+.ans button.no{border-color:var(--bad);background:light-dark(#fde8e8,#45232c)}
+.ans button.gone{opacity:.25;pointer-events:none}
+.ans button:disabled{cursor:default}
+.info{margin-top:16px;border-radius:18px;padding:16px;background:light-dark(#fff8dc,#3a3520);border:3px dashed var(--sun)}
+.info h3{font-size:22px;margin-bottom:4px}
+.tools{display:flex;gap:10px;margin-top:14px}
+.tools button{appearance:none;border:3px solid var(--line);background:transparent;color:var(--ink);border-radius:14px;padding:8px 14px;font:800 15px Nunito,sans-serif;min-height:44px;cursor:pointer}
+.tools button:disabled{opacity:.35}
+/* sonuç */
+.stamp{width:min(220px,60vw);margin:0 auto 8px;display:block}
+.res{text-align:center}
+.res h2{font-size:clamp(30px,6vw,44px)}
+.big{font:800 clamp(44px,10vw,64px)/1 "Baloo 2",sans-serif;color:var(--coral);margin:8px 0}
+.stars svg{width:44px;height:44px}
+.review{text-align:left;margin-top:18px;display:grid;gap:8px}
+.review div{background:var(--chip);border-radius:14px;padding:10px 14px;font-size:15px}
+.review strong{color:var(--ok)}.review em{color:var(--bad);font-style:normal;font-weight:800}
+/* öğren kartları */
+.flip{min-height:260px;border-radius:22px;background:var(--chip);border:3px solid var(--line);padding:22px;display:flex;flex-direction:column;justify-content:center;cursor:pointer;text-align:center;gap:10px}
+.flip h2{font-size:clamp(22px,4.5vw,30px)}
+.flip .a{font:800 26px "Baloo 2",sans-serif;color:var(--ok)}
+.hint{color:var(--soft);font-size:14px}
+.note{color:#fff;opacity:.85;font-size:13px;text-align:center;margin-top:16px}
+.seg.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.go:disabled{opacity:.55;cursor:default}
+.stepper{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.stepper button{appearance:none;width:48px;height:48px;border-radius:14px;border:3px solid var(--line);background:var(--chip);color:var(--ink);font:800 24px/1 "Baloo 2",sans-serif;cursor:pointer}
+.stepper output{font:800 30px/1 "Baloo 2",sans-serif;min-width:2ch;text-align:center;color:var(--coral)}
+.stepper input{flex:1 1 160px;accent-color:var(--coral);height:44px;padding:0;border:0;background:transparent}
+.note a{color:#fff}
+.link{appearance:none;background:none;border:0;color:var(--soft);font:700 15px Nunito,sans-serif;text-decoration:underline;display:block;margin:8px auto 0;min-height:44px;cursor:pointer}
+.form{display:grid;gap:12px}.form label{display:grid;gap:4px;font-weight:800;font-size:14px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+input,select,textarea{font:600 16px Nunito,sans-serif;color:var(--ink);background:var(--chip);border:3px solid var(--line);border-radius:12px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--sun);border-color:var(--sun)}
+.review .m{font-size:13px;color:var(--coral);font-weight:800}.review i{font-style:normal}
+.del{appearance:none;border:2px solid var(--bad);color:var(--bad);background:transparent;border-radius:10px;font:800 14px Nunito;padding:6px 12px;min-height:40px;cursor:pointer;display:block;margin-top:8px}
+.hint{color:var(--soft);font-size:14px}
+@media (prefers-reduced-motion:no-preference){.pop{animation:pop .35s ease}@keyframes pop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="#ffcf3f"/><circle cx="32" cy="32" r="22" fill="#fff"/><path d="M32 12l6 20-6 20-6-20z" fill="#ff6b4a"/><path d="M32 32l6 0-6 20-6-20z" fill="#14233a" opacity=".85"/><circle cx="32" cy="32" r="3" fill="#14233a"/></svg>
+<div><h1>Bilgi Rotası</h1><p>İlkokul · Ortaokul · Lise</p></div>
+</header>
+
+<!-- BAŞLANGIÇ -->
+<section id="home" class="card">
+<div class="lbl">Seviyeni seç</div>
+<div class="seg c3" id="lvls">
+<button class="opt" data-v="ilk" aria-pressed="true">İlkokul<small>1–4. sınıf</small></button>
+<button class="opt" data-v="orta" aria-pressed="false">Ortaokul<small>5–8. sınıf</small></button>
+<button class="opt" data-v="lise" aria-pressed="false">Lise<small>9–12. sınıf</small></button>
+</div>
+<div class="lbl">Konu seç</div>
+<div class="seg c4" id="cats">
+<button class="opt" data-v="cog" aria-pressed="false"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#2b9bf0"/><path d="M10 13c5 0 6 4 10 3s3 6 8 5 2 7-3 9c-2-4-6-3-7-7s-7-3-8-10z" fill="#3fbf6f"/></svg>Coğrafya</button>
+<button class="opt" data-v="tarih" aria-pressed="false"><svg viewBox="0 0 40 40"><path d="M6 34h28v3H6zM9 15h4v18H9zM18 15h4v18h-4zM27 15h4v18h-4z" fill="#c98a4b"/><path d="M4 14L20 4l16 10z" fill="#ff6b4a"/></svg>Tarih</button>
+<button class="opt" data-v="fen" aria-pressed="false"><svg viewBox="0 0 40 40"><path d="M15 4h10v3h-2v9l10 17a3 3 0 0 1-3 4H10a3 3 0 0 1-3-4l10-17V7h-2z" fill="#fff" stroke="#14233a" stroke-width="2"/><path d="M11 27h18l3 6a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2z" fill="#3fbf6f"/><circle cx="18" cy="30" r="1.6" fill="#fff"/><circle cx="23" cy="32" r="1.2" fill="#fff"/></svg>Fen Bilimleri</button>
+<button class="opt" data-v="mat" aria-pressed="false"><svg viewBox="0 0 40 40"><rect x="3" y="3" width="34" height="34" rx="8" fill="#7b5cff"/><path d="M11 13h8M15 9v8M23 13h7M11 27h8M23 24h7M23 30h7M12 24l6 6M18 24l-6 6" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/></svg>Matematik</button>
+<button class="opt" data-v="spor" aria-pressed="false"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fff" stroke="#14233a" stroke-width="2.5"/><path d="M20 12l7 5-3 8h-8l-3-8z" fill="#14233a"/><path d="M20 3v9M27 17l9-3M24 25l5 8M16 25l-5 8M13 17l-9-3" stroke="#14233a" stroke-width="2"/></svg>Spor</button>
+<button class="opt" data-v="sanat" aria-pressed="false"><svg viewBox="0 0 40 40"><path d="M20 4C10 4 3 11 3 19c0 7 5 10 9 10 3 0 3 3 3 5 0 2 2 3 5 3 10 0 17-8 17-17S30 4 20 4z" fill="#ffcf3f" stroke="#14233a" stroke-width="2"/><circle cx="12" cy="17" r="3" fill="#ff6b4a"/><circle cx="19" cy="11" r="3" fill="#2b9bf0"/><circle cx="28" cy="13" r="3" fill="#3fbf6f"/><circle cx="29" cy="23" r="3" fill="#7b5cff"/></svg>Sanat ve Edebiyat</button>
+<button class="opt" data-v="gk" aria-pressed="false"><svg viewBox="0 0 40 40"><path d="M20 4a12 12 0 0 0-7 22v4h14v-4A12 12 0 0 0 20 4z" fill="#ffcf3f" stroke="#14233a" stroke-width="2"/><rect x="14" y="31" width="12" height="5" rx="2" fill="#14233a"/></svg>Genel Kültür</button>
+<button class="opt" data-v="karma" aria-pressed="true"><svg viewBox="0 0 40 40"><circle cx="13" cy="14" r="8" fill="#2b9bf0"/><circle cx="27" cy="14" r="8" fill="#ff6b4a"/><circle cx="20" cy="27" r="8" fill="#ffcf3f"/></svg>Karışık</button>
+</div>
+<div class="lbl">Soru sayısı</div>
+<div class="stepper"><button type="button" id="nMinus" aria-label="Bir azalt">−</button><output id="nVal" aria-live="polite">10</output><button type="button" id="nPlus" aria-label="Bir artır">+</button><input type="range" id="nRange" min="5" max="15" step="1" value="10" aria-label="Soru sayısı"></div>
+<p class="best" id="count"></p>
+<div class="row">
+<button class="go" id="play" disabled>Sorular yükleniyor…</button>
+<button class="go alt" id="learn" disabled>Öğren kartları</button>
+</div>
+<p class="best" id="best"></p>
+<button class="link" id="openT">Öğretmen paneli: kendi sorunu ekle</button>
+</section>
+
+<!-- ÖĞRETMEN PANELİ -->
+<section id="teach" class="card hide">
+<h2 style="font-size:30px;margin-bottom:6px">Öğretmen paneli</h2>
+<p id="tstat" class="hint" style="margin:0 0 14px"></p>
+<form id="tform" class="form">
+<div class="two">
+<label>Seviye<select id="fl"><option value="ilk">İlkokul</option><option value="orta">Ortaokul</option><option value="lise">Lise</option></select></label>
+<label>Konu<select id="fc"><option value="cog">Coğrafya</option><option value="tarih">Tarih</option><option value="fen">Fen Bilimleri</option><option value="mat">Matematik</option><option value="spor">Spor</option><option value="sanat">Sanat ve Edebiyat</option><option value="gk">Genel Kültür</option></select></label>
+</div>
+<label>Soru<textarea id="fq" rows="2" maxlength="300" required></textarea></label>
+<label>Doğru cevap<input id="fa" maxlength="120" required></label>
+<div class="two">
+<label>Yanlış cevap 1<input id="fw1" maxlength="120" required></label>
+<label>Yanlış cevap 2<input id="fw2" maxlength="120" required></label>
+<label>Yanlış cevap 3<input id="fw3" maxlength="120" required></label>
+</div>
+<label>Açıklama (cevaptan sonra öğrenciye gösterilir)<textarea id="fe" rows="2" maxlength="400"></textarea></label>
+<p id="tmsg" class="hint" role="status" style="margin:0"></p>
+<button class="go" id="tsave" type="submit">Soruyu kaydet</button>
+</form>
+<h3 style="font-size:22px;margin:22px 0 8px">Eklenen sorular</h3>
+<div id="tlist" class="review"></div>
+<div class="tools"><button id="tback">Ana menü</button></div>
+</section>
+
+<!-- OYUN -->
+<section id="game" class="hide">
+<div class="trail"><svg id="map" viewBox="0 0 640 110" aria-label="İlerleme rotası"></svg></div>
+<div class="card">
+<div class="hud"><span class="pill" id="num">Soru 1/10</span><span class="pill">Puan: <span id="pts">0</span></span><span class="pill" id="streak">Seri: 0</span><span class="hearts" id="hearts"></span></div>
+<div class="bar"><i id="time" style="width:100%"></i></div>
+<span class="qtag" id="tag"></span>
+<h2 id="q"></h2>
+<div class="ans" id="ans"></div>
+<div class="tools"><button id="joker">50:50 joker</button><button id="quit">Ana menü</button></div>
+<div class="info hide" id="info"><h3 id="verdict"></h3><p id="expl" style="margin:0"></p><button class="go" id="next">Devam</button></div>
+</div>
+</section>
+
+<!-- SONUÇ -->
+<section id="result" class="card res hide"></section>
+
+<!-- ÖĞREN -->
+<section id="study" class="card hide">
+<div class="hud"><span class="pill" id="snum"></span><span class="pill" id="stag"></span></div>
+<div class="flip" id="flip" role="button" tabindex="0"></div>
+<div class="row"><button class="go alt" id="sprev">Önceki</button><button class="go" id="snext">Sonraki</button></div>
+<div class="tools"><button id="sback">Ana menü</button></div>
+</section>
+<p class="note">Hazır sorular müfredat düzeyine göre seçilmiş örnek bir bankadır. Öğretmenler, panelden kendi sorularını ekleyebilir. "Open Trivia DB" etiketli sorular <a href="https://opentdb.com" rel="noopener">Open Trivia Database</a> sorularından Türkçeye uyarlanmıştır ve <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.tr" rel="noopener">CC BY-SA 4.0</a> lisanslıdır.</p>
+</div>
+
+<script>
+{
+const CATS={cog:'Coğrafya',tarih:'Tarih',fen:'Fen Bilimleri',mat:'Matematik',spor:'Spor',sanat:'Sanat ve Edebiyat',gk:'Genel Kültür'};
+const LVLS={ilk:'İlkokul',orta:'Ortaokul',lise:'Lise'};
+let BANK=null,TQ=[],dbRef=null,canWrite=null;
+const $=id=>document.getElementById(id);
+const S={lvl:'ilk',cat:'karma',n:10};let OT=null;let G=null,timer=null,L=null;
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const show=id=>['home','game','result','study','teach'].forEach(s=>$(s).classList.toggle('hide',s!==id));
+function pool(){
+const keys=S.cat==='karma'?Object.keys(CATS):[S.cat];
+const b=(BANK&&BANK[S.lvl])||{};
+const o=(OT&&OT[S.lvl])||{};
+const base=keys.flatMap(k=>(b[k]||[]).map(x=>({c:k,q:x[0],a:x[1],w:x[2],e:x[3]})).concat((o[k]||[]).map(x=>({c:k,q:x[0],a:x[1],w:x[2],e:x[3],s:1}))));
+const extra=TQ.filter(t=>t.lvl===S.lvl&&keys.includes(t.cat)).map(t=>({c:t.cat,q:t.q,a:t.a,w:t.w,e:t.e,t:1}));
+return base.concat(extra);
+}
+const bestKey=()=>'br-best-'+S.lvl+'-'+S.cat;
+function refresh(){
+const b=store.get(bestKey());$('best').textContent=b?'Bu seçimdeki en iyi puanın: '+b:'İlk rekoru sen kır!';
+if(!BANK)return;const p=pool(),t=p.filter(x=>x.t).length,o=p.filter(x=>x.s).length;
+const parts=[o&&`${o} Open Trivia DB`,t&&`${t} öğretmen`].filter(Boolean);
+$('count').textContent=`Bu seçimde ${p.length} soru var`+(parts.length?` (${parts.join(', ')})`:'')+(p.length&&p.length<S.n?`; yarışma ${p.length} soruyla oynanır`:'');
+$('play').disabled=p.length<4;$('learn').disabled=!p.length;$('play').textContent=p.length<4?'Bu seçimde yeterli soru yok':'Yarışmaya başla';
+}
+
+fetch('sorular-otdb.json').then(r=>r.ok?r.json():null).then(j=>{OT=j;refresh()}).catch(()=>{});
+{const v=+store.get('br-n');if(v>=5&&v<=15)S.n=v}
+function setN(v){S.n=Math.max(5,Math.min(15,v));$('nVal').textContent=S.n;$('nRange').value=S.n;$('nMinus').disabled=S.n<=5;$('nPlus').disabled=S.n>=15;store.set('br-n',S.n);refresh()}
+$('nMinus').onclick=()=>setN(S.n-1);$('nPlus').onclick=()=>setN(S.n+1);$('nRange').oninput=e=>setN(+e.target.value);setN(S.n);
+fetch('sorular.json').then(r=>{if(!r.ok)throw 0;return r.json()}).then(j=>{BANK=j;refresh()})
+.catch(()=>{$('play').textContent='Sorular yüklenemedi';$('count').textContent='Sayfayı yenilemeyi deneyin.'});
+
+function seg(id,key){$(id).addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;S[key]=b.dataset.v;$(id).querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed',x===b));refresh()})}
+seg('lvls','lvl');seg('cats','cat');refresh();
+
+const heart=f=>`<svg viewBox="0 0 24 24"><path d="M12 21s-8-5.3-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.7-8 11-8 11z" fill="${f?'#ff6b4a':'none'}" stroke="#ff6b4a" stroke-width="2"/></svg>`;
+
+function drawMap(){
+const n=G.qs.length,svg=$('map');
+const d='M20 80 C 90 10, 150 10, 200 55 S 300 100, 360 55 S 470 0, 520 45 S 600 95, 620 40';
+svg.innerHTML=`<path id="road" d="${d}" fill="none" stroke="var(--line)" stroke-width="14" stroke-linecap="round"/><path d="${d}" fill="none" stroke="var(--sun)" stroke-width="3" stroke-dasharray="8 10" stroke-linecap="round"/><g id="dots"></g><g id="tok"></g>`;
+const road=$('road'),len=road.getTotalLength();
+G.pts=Array.from({length:n},(_,i)=>road.getPointAtLength(n>1?len*i/(n-1):0));
+const col=i=>G.log[i]===true?'var(--ok)':G.log[i]===false?'var(--bad)':'var(--card)';
+$('dots').innerHTML=G.pts.map((p,i)=>`<circle cx="${p.x}" cy="${p.y}" r="11" fill="${col(i)}" stroke="var(--ink)" stroke-width="2.5"/><text x="${p.x}" y="${p.y+4.5}" text-anchor="middle" font-size="12" font-weight="800" font-family="Nunito" fill="${G.log[i]===undefined?'var(--ink)':'#fff'}">${i+1}</text>`).join('');
+const p=G.pts[Math.min(G.i,n-1)];
+$('tok').innerHTML=`<g class="pop" transform="translate(${p.x},${p.y-14})"><ellipse cx="0" cy="12" rx="9" ry="3" fill="#000" opacity=".2"/><path d="M0 12V-22" stroke="var(--ink)" stroke-width="3"/><path d="M1 -22h20l-6 7 6 7H1z" fill="var(--coral)"/></g>`;
+}
+
+function start(){
+const p=shuf(pool()).slice(0,S.n);if(p.length<4)return;
+G={qs:p,i:0,pts:[],score:0,streak:0,lives:3,log:[],joker:true,picked:[],lim:{ilk:25,orta:20,lise:20}[S.lvl]};
+$('joker').disabled=false;show('game');ask();
+}
+
+function ask(){
+const it=G.qs[G.i];G.opts=shuf([it.a,...it.w]);
+$('num').textContent=`Soru ${G.i+1}/${G.qs.length}`;$('pts').textContent=G.score;$('streak').textContent='Seri: '+G.streak;
+$('hearts').innerHTML=[0,1,2].map(k=>heart(k<G.lives)).join('');
+$('tag').textContent=CATS[it.c]+(it.t?' · öğretmen sorusu':it.s?' · Open Trivia DB':'');$('q').textContent=it.q;
+$('ans').innerHTML=G.opts.map((o,k)=>`<button data-k="${k}"><b>${'ABCD'[k]}</b><span></span></button>`).join('');
+$('ans').querySelectorAll('span').forEach((s,k)=>s.textContent=G.opts[k]);
+$('info').classList.add('hide');drawMap();
+G.t0=Date.now();clearInterval(timer);
+timer=setInterval(()=>{const left=G.lim-(Date.now()-G.t0)/1000,pct=Math.max(0,left/G.lim*100);
+const bar=$('time');bar.style.width=pct+'%';bar.classList.toggle('low',pct<30);if(left<=0)answer(-1)},100);
+}
+
+function answer(k){
+clearInterval(timer);const it=G.qs[G.i],right=k>=0&&G.opts[k]===it.a;
+const left=Math.max(0,G.lim-(Date.now()-G.t0)/1000);
+$('ans').querySelectorAll('button').forEach((b,j)=>{b.disabled=true;if(G.opts[j]===it.a)b.classList.add('ok');else if(j===k)b.classList.add('no')});
+G.log[G.i]=right;G.picked[G.i]=k>=0?G.opts[k]:'(süre doldu)';
+if(right){G.streak++;const gain=10+Math.round(left/2)+(G.streak>=3?5:0);G.score+=gain;$('verdict').textContent=`Doğru! +${gain} puan${G.streak>=3?' (seri bonusu)':''}`}
+else{G.streak=0;G.lives--;$('verdict').textContent=k<0?'Süre doldu!':'Olmadı, ama artık biliyorsun:'}
+$('verdict').style.color=right?'var(--ok)':'var(--bad)';
+$('expl').textContent=(right?'':'Doğru cevap: '+it.a+'. ')+(it.e||'');
+$('pts').textContent=G.score;$('streak').textContent='Seri: '+G.streak;$('hearts').innerHTML=[0,1,2].map(j=>heart(j<G.lives)).join('');
+$('next').textContent=(G.lives<=0||G.i===G.qs.length-1)?'Sonucu gör':'Devam';
+$('info').classList.remove('hide');drawMap();$('next').focus({preventScroll:true});
+$('info').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function finish(){
+const n=G.log.filter(x=>x===true).length,tot=G.qs.length;
+const ratio=n/tot,stars=ratio>=.9?3:ratio>=.6?2:ratio>=.3?1:0;const best=store.get(bestKey())||0,rec=G.score>best;
+if(rec)store.set(bestKey(),G.score);
+const msg=G.lives<=0?'Canların bitti ama çok şey öğrendin!':stars===3?'Harika bir kaşifsin!':stars===2?'Çok iyi gidiyorsun!':'Tekrar dene, rota seni bekliyor!';
+const star=f=>`<svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21.1l1.4-7L2 9.3l7-.8z" fill="${f?'#ffcf3f':'var(--chip)'}" stroke="#d9a514" stroke-width="1.5"/></svg>`;
+$('result').innerHTML=`<svg class="stamp pop" viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="none" stroke="var(--coral)" stroke-width="8" stroke-dasharray="4 6"/><circle cx="100" cy="100" r="72" fill="none" stroke="var(--coral)" stroke-width="4"/><text x="100" y="92" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="26" fill="var(--coral)">BİLGİ</text><text x="100" y="120" text-anchor="middle" font-family="Baloo 2" font-weight="800" font-size="26" fill="var(--coral)">ROTASI</text><text x="100" y="146" text-anchor="middle" font-family="Nunito" font-weight="800" font-size="14" fill="var(--coral)">${n} / ${tot} doğru</text></svg>
+<h2>${msg}</h2><div class="big">${G.score} puan</div><div class="stars">${[0,1,2].map(i=>star(i<stars)).join('')}</div>
+<p style="color:var(--soft);margin:6px 0 0">${rec?'Yeni rekor!':'En iyi puanın: '+best}</p>
+<div class="review">${G.qs.map((q,i)=>G.log[i]===undefined?'':`<div></div>`).join('')}</div>
+<div class="row"><button class="go" id="again">Tekrar oyna</button><button class="go alt" id="menu">Ana menü</button></div>`;
+const rows=$('result').querySelectorAll('.review div');let r=0;
+G.qs.forEach((q,i)=>{if(G.log[i]===undefined)return;const d=rows[r++];
+d.innerHTML='<span></span><br>'+(G.log[i]?'<strong>Doğru: </strong>':'<em>Senin cevabın: </em><i></i><br><strong>Doğru: </strong>')+'<b></b>';
+d.querySelector('span').textContent=(i+1)+'. '+q.q;d.querySelector('b').textContent=q.a;const ii=d.querySelector('i');if(ii)ii.textContent=G.picked[i]});
+$('again').onclick=start;$('menu').onclick=home;show('result');window.scrollTo({top:0});
+}
+
+function home(){clearInterval(timer);refresh();show('home');window.scrollTo({top:0})}
+
+// Öğren kartları
+function study(){const p=pool();if(!p.length)return;L={qs:shuf(p),i:0,open:false};show('study');card()}
+function card(){const it=L.qs[L.i];$('snum').textContent=`Kart ${L.i+1}/${L.qs.length}`;$('stag').textContent=CATS[it.c];
+const f=$('flip');f.innerHTML=L.open?'<h2></h2><div class="a"></div><p style="margin:0"></p>':'<h2></h2><p class="hint">Cevabı görmek için karta dokun</p>';
+f.querySelector('h2').textContent=it.q;if(L.open){f.querySelector('.a').textContent=it.a;f.querySelector('p').textContent=it.e||''}}
+function move(d){L.i=(L.i+d+L.qs.length)%L.qs.length;L.open=false;card()}
+$('flip').addEventListener('click',()=>{L.open=!L.open;card()});
+$('flip').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();L.open=!L.open;card()}});
+$('sprev').onclick=()=>move(-1);$('snext').onclick=()=>move(1);$('sback').onclick=home;
+document.addEventListener('keydown',e=>{if($('study').classList.contains('hide'))return;if(e.key==='ArrowRight')move(1);if(e.key==='ArrowLeft')move(-1)});
+
+$('play').onclick=start;$('learn').onclick=study;$('quit').onclick=home;
+$('ans').addEventListener('click',e=>{const b=e.target.closest('button');if(b&&!b.disabled)answer(+b.dataset.k)});
+$('next').onclick=()=>{if(G.lives<=0||G.i===G.qs.length-1)return finish();G.i++;ask();window.scrollTo({top:0,behavior:'smooth'})};
+$('joker').onclick=()=>{if(!G.joker||!$('info').classList.contains('hide'))return;G.joker=false;$('joker').disabled=true;
+const it=G.qs[G.i];const wrong=shuf(G.opts.map((o,k)=>o===it.a?-1:k).filter(k=>k>=0)).slice(0,2);
+const btns=$('ans').querySelectorAll('button');wrong.forEach(k=>btns[k].classList.add('gone'))};
+
+// Öğretmen soruları (paylaşılan veritabanı)
+const clean=v=>String(v==null?'':v).slice(0,400);
+function setTeachState(){
+const f=$('tform');
+if(!dbRef){$('tstat').textContent='Paylaşılan soru veritabanına şu an bağlanılamıyor. Hazır soru bankası kullanılmaya devam ediyor.';f.classList.add('hide');return}
+if(canWrite===false){$('tstat').textContent='Bu sayfada soru eklemek için düzenleme yetkisi gerekir. Eklenmiş soruları aşağıda görebilirsin.';f.classList.add('hide');return}
+$('tstat').textContent='Eklediğin sorular, bu sayfayı açan herkesin oyununa seçilen seviye ve konuda karışır.';f.classList.remove('hide');
+}
+function renderT(){
+const box=$('tlist');
+if(!TQ.length){box.innerHTML='<div>Henüz öğretmen sorusu eklenmedi.</div>';return}
+box.innerHTML=TQ.map(()=>'<div><span class="m"></span><br><b class="qq"></b><br><strong>Doğru: </strong><i class="aa"></i><button class="del" type="button">Sil</button></div>').join('');
+box.querySelectorAll(':scope>div').forEach((d,i)=>{const t=TQ[i];
+d.querySelector('.m').textContent=(LVLS[t.lvl]||'')+' · '+(CATS[t.cat]||'');d.querySelector('.qq').textContent=t.q;d.querySelector('.aa').textContent=t.a;
+const del=d.querySelector('.del');if(canWrite===false)del.remove();else del.onclick=async()=>{del.disabled=true;try{await dbRef.collection('sorular').doc(t.id).delete()}catch(e){del.disabled=false;$('tmsg').textContent='Silinemedi.'}}});
+}
+$('openT').onclick=()=>{setTeachState();renderT();show('teach');window.scrollTo({top:0})};
+$('tback').onclick=home;
+$('tform').addEventListener('submit',async e=>{e.preventDefault();if(!dbRef)return;
+const w=[$('fw1').value,$('fw2').value,$('fw3').value].map(s=>s.trim());const a=$('fa').value.trim(),q=$('fq').value.trim();
+if(!q||!a||w.some(x=>!x)){$('tmsg').textContent='Soru, doğru cevap ve üç yanlış cevabın hepsi gerekli.';return}
+if(new Set([a,...w]).size<4){$('tmsg').textContent='Seçenekler birbirinden farklı olmalı.';return}
+$('tsave').disabled=true;$('tmsg').textContent='Kaydediliyor…';
+try{await dbRef.collection('sorular').add({lvl:$('fl').value,cat:$('fc').value,q,a,w,e:$('fe').value.trim(),at:Date.now()});
+['fq','fa','fw1','fw2','fw3','fe'].forEach(id=>$(id).value='');$('tmsg').textContent='Kaydedildi. Bir soru daha ekleyebilirsin.'}
+catch(err){if(err&&err.code==='invalid_argument'){canWrite=false;setTeachState()}$('tmsg').textContent=err&&err.code==='quota_exceeded'?'Soru kapasitesi doldu; bazı soruları silin.':'Kaydedilemedi. Düzenleme yetkin olmayabilir.'}
+$('tsave').disabled=false});
+
+(async()=>{
+try{
+if(!window.claude||!claude.use)return setTeachState();
+const db=await claude.use('db');if(!db)return setTeachState();dbRef=db;
+const user=await claude.use('user');
+if(user){try{const c=await user.canEdit();canWrite=c===true?true:c===false?false:null}catch(e){canWrite=null}}
+setTeachState();
+let to=setTimeout(()=>{$('tstat').textContent='Öğretmen soruları henüz yüklenemedi; hazır soru bankası kullanılıyor.'},10000);
+db.collection('sorular').limit(1000).onSnapshot(snap=>{
+if(!snap.metadata.fromCache){clearTimeout(to)}
+TQ=snap.docs.map(d=>{const x=d.data()||{};return{id:d.id,lvl:clean(x.lvl),cat:clean(x.cat),q:clean(x.q),a:clean(x.a),w:Array.isArray(x.w)?x.w.slice(0,3).map(clean):[],e:clean(x.e)}})
+.filter(t=>LVLS[t.lvl]&&CATS[t.cat]&&t.q&&t.a&&t.w.length===3);
+refresh();if(!$('teach').classList.contains('hide'))renderT();
+},()=>{clearTimeout(to)});
+}catch(e){setTeachState()}
+})();
+}
+
+</script>
+</body>
+</html>

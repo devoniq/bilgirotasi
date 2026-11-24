@@ -1,0 +1,1950 @@
+{
+ "ilk": {
+  "cog": [
+   [
+    "Türkiye'nin başkenti neresidir?",
+    "Ankara",
+    [
+     "İstanbul",
+     "İzmir",
+     "Bursa"
+    ],
+    "Ankara, 13 Ekim 1923'te Türkiye'nin başkenti oldu."
+   ],
+   [
+    "Üç tarafı denizlerle çevrili kara parçasına ne denir?",
+    "Yarımada",
+    [
+     "Ada",
+     "Körfez",
+     "Boğaz"
+    ],
+    "Türkiye de üç tarafı denizlerle çevrili olduğu için bir yarımadadır."
+   ],
+   [
+    "Türkiye'nin en yüksek dağı hangisidir?",
+    "Ağrı Dağı",
+    [
+     "Erciyes Dağı",
+     "Uludağ",
+     "Palandöken"
+    ],
+    "Ağrı Dağı yaklaşık 5137 metre yüksekliğindedir."
+   ],
+   [
+    "Dünyanın en büyük okyanusu hangisidir?",
+    "Büyük Okyanus",
+    [
+     "Atlas Okyanusu",
+     "Hint Okyanusu",
+     "Arktik Okyanusu"
+    ],
+    "Büyük Okyanus (Pasifik), Dünya yüzeyinin yaklaşık üçte birini kaplar."
+   ],
+   [
+    "Türkiye'nin en büyük gölü hangisidir?",
+    "Van Gölü",
+    [
+     "Tuz Gölü",
+     "Beyşehir Gölü",
+     "Eğirdir Gölü"
+    ],
+    "Van Gölü sodalı (acı) bir göldür; Türkiye'nin en büyük gölüdür."
+   ],
+   [
+    "Dünyada kaç kıta vardır?",
+    "7",
+    [
+     "5",
+     "6",
+     "9"
+    ],
+    "Asya, Afrika, Kuzey Amerika, Güney Amerika, Antarktika, Avrupa ve Okyanusya."
+   ],
+   [
+    "Pusulanın ibresi her zaman hangi yönü gösterir?",
+    "Kuzey",
+    [
+     "Güney",
+     "Doğu",
+     "Batı"
+    ],
+    "Pusula ibresi mıknatıslıdır ve Dünya'nın manyetik kuzeyini gösterir."
+   ],
+   [
+    "Türkiye'nin en kalabalık şehri hangisidir?",
+    "İstanbul",
+    [
+     "Ankara",
+     "İzmir",
+     "Antalya"
+    ],
+    "İstanbul, hem Asya hem Avrupa kıtasında toprağı olan bir şehirdir."
+   ],
+   [
+    "Ünlü Mısır piramitleri hangi kıtadadır?",
+    "Afrika",
+    [
+     "Asya",
+     "Avrupa",
+     "Güney Amerika"
+    ],
+    "Mısır, Afrika kıtasının kuzeydoğusundadır."
+   ],
+   [
+    "Tamamı Türkiye'de olan en uzun nehir hangisidir?",
+    "Kızılırmak",
+    [
+     "Fırat",
+     "Dicle",
+     "Sakarya"
+    ],
+    "Kızılırmak yaklaşık 1355 km uzunluğundadır ve Karadeniz'e dökülür."
+   ],
+   [
+    "Dünyanın en büyük sıcak çölü hangisidir?",
+    "Sahra Çölü",
+    [
+     "Gobi Çölü",
+     "Atacama Çölü",
+     "Kalahari Çölü"
+    ],
+    "Sahra, Afrika'nın kuzeyinde yer alır."
+   ],
+   [
+    "Japonya'nın başkenti neresidir?",
+    "Tokyo",
+    [
+     "Pekin",
+     "Seul",
+     "Osaka"
+    ],
+    "Tokyo, dünyanın en kalabalık şehir bölgelerinden biridir."
+   ]
+  ],
+  "tarih": [
+   [
+    "Mustafa Kemal Atatürk hangi şehirde doğdu?",
+    "Selanik",
+    [
+     "İstanbul",
+     "Ankara",
+     "Samsun"
+    ],
+    "Atatürk 1881 yılında Selanik'te doğdu."
+   ],
+   [
+    "Atatürk'ün annesinin adı nedir?",
+    "Zübeyde Hanım",
+    [
+     "Makbule Hanım",
+     "Latife Hanım",
+     "Fikriye Hanım"
+    ],
+    "Babasının adı ise Ali Rıza Efendi'dir."
+   ],
+   [
+    "Türkiye Büyük Millet Meclisi hangi şehirde açıldı?",
+    "Ankara",
+    [
+     "İstanbul",
+     "Sivas",
+     "Erzurum"
+    ],
+    "Meclis 23 Nisan 1920'de Ankara'da açıldı."
+   ],
+   [
+    "30 Ağustos hangi bayramdır?",
+    "Zafer Bayramı",
+    [
+     "Cumhuriyet Bayramı",
+     "Çocuk Bayramı",
+     "Gençlik ve Spor Bayramı"
+    ],
+    "30 Ağustos 1922'de Başkomutanlık Meydan Muharebesi kazanıldı."
+   ],
+   [
+    "19 Mayıs'ta hangi bayramı kutlarız?",
+    "Atatürk'ü Anma, Gençlik ve Spor Bayramı",
+    [
+     "Zafer Bayramı",
+     "Cumhuriyet Bayramı",
+     "Ulusal Egemenlik ve Çocuk Bayramı"
+    ],
+    "Atatürk 19 Mayıs 1919'da Samsun'a çıkarak Millî Mücadele'yi başlattı."
+   ],
+   [
+    "Harf İnkılabı ile hangi alfabeye geçildi?",
+    "Latin alfabesi",
+    [
+     "Arap alfabesi",
+     "Kiril alfabesi",
+     "Göktürk alfabesi"
+    ],
+    "Yeni Türk harfleri 1928'de kabul edildi."
+   ],
+   [
+    "'Atatürk' soyadını Mustafa Kemal'e kim verdi?",
+    "TBMM",
+    [
+     "Halk oylaması",
+     "Annesi",
+     "Öğretmeni"
+    ],
+    "1934'te çıkan Soyadı Kanunu'ndan sonra TBMM bu soyadını ona verdi."
+   ],
+   [
+    "Yazıyı ilk kez kullanan uygarlık hangisidir?",
+    "Sümerler",
+    [
+     "Romalılar",
+     "Osmanlılar",
+     "Mayalar"
+    ],
+    "Sümerler, Mezopotamya'da çivi yazısını kullandılar."
+   ],
+   [
+    "Çanakkale Deniz Zaferi'ni her yıl hangi tarihte anarız?",
+    "18 Mart",
+    [
+     "23 Nisan",
+     "29 Ekim",
+     "10 Kasım"
+    ],
+    "18 Mart 1915'te düşman donanması Çanakkale Boğazı'nı geçemedi."
+   ]
+  ],
+  "fen": [
+   [
+    "Vücudumuzda kanı pompalayan organ hangisidir?",
+    "Kalp",
+    [
+     "Akciğer",
+     "Mide",
+     "Böbrek"
+    ],
+    "Kalp, kanı damarlar yoluyla bütün vücuda pompalar."
+   ],
+   [
+    "Mıknatıs aşağıdakilerden hangisini çeker?",
+    "Demir çivi",
+    [
+     "Tahta kaşık",
+     "Plastik cetvel",
+     "Cam bardak"
+    ],
+    "Mıknatıs demir, nikel ve kobalt gibi bazı metalleri çeker."
+   ],
+   [
+    "Suyun gaz hâline ne ad verilir?",
+    "Su buharı",
+    [
+     "Buz",
+     "Kar",
+     "Dolu"
+    ],
+    "Su ısıtılınca buharlaşır ve su buharına dönüşür."
+   ],
+   [
+    "Dünya kendi etrafındaki bir dönüşünü yaklaşık kaç saatte tamamlar?",
+    "24 saat",
+    [
+     "12 saat",
+     "48 saat",
+     "365 saat"
+    ],
+    "Bu dönüş, gece ile gündüzün oluşmasını sağlar."
+   ],
+   [
+    "Kelebeğin yaşam döngüsünde yumurtadan ne çıkar?",
+    "Tırtıl",
+    [
+     "Kelebek",
+     "Pupa",
+     "İribaş"
+    ],
+    "Yumurta → tırtıl → pupa → kelebek."
+   ],
+   [
+    "Hangisi beş duyu organımızdan biri değildir?",
+    "Kalp",
+    [
+     "Göz",
+     "Kulak",
+     "Dil"
+    ],
+    "Duyu organlarımız göz, kulak, burun, dil ve deridir."
+   ],
+   [
+    "Bitkilerin topraktan su ve mineral alan bölümü hangisidir?",
+    "Kök",
+    [
+     "Yaprak",
+     "Çiçek",
+     "Meyve"
+    ],
+    "Kökler ayrıca bitkiyi toprağa sabitler."
+   ],
+   [
+    "Hangisi kendiliğinden ışık yayan bir ışık kaynağıdır?",
+    "Güneş",
+    [
+     "Ay",
+     "Ayna",
+     "Dünya"
+    ],
+    "Ay kendi ışığını üretmez, Güneş'ten gelen ışığı yansıtır."
+   ]
+  ],
+  "mat": [
+   [
+    "7 × 8 kaçtır?",
+    "56",
+    [
+     "54",
+     "48",
+     "63"
+    ],
+    "7 × 8 = 56. İpucu: 5, 6, 7, 8 → 56 = 7 × 8."
+   ],
+   [
+    "Bir düzine kaç tanedir?",
+    "12",
+    [
+     "10",
+     "6",
+     "20"
+    ],
+    "Yumurtalar genellikle düzine (12'li) olarak satılır."
+   ],
+   [
+    "Beşgenin kaç kenarı vardır?",
+    "5",
+    [
+     "4",
+     "6",
+     "8"
+    ],
+    "Adı üstünde: beş kenarı ve beş köşesi vardır."
+   ],
+   [
+    "1 saat kaç dakikadır?",
+    "60",
+    [
+     "100",
+     "30",
+     "24"
+    ],
+    "1 saat 60 dakika, 1 dakika 60 saniyedir."
+   ],
+   [
+    "100'ün dörtte biri kaçtır?",
+    "25",
+    [
+     "50",
+     "20",
+     "40"
+    ],
+    "100'ü 4 eşit parçaya bölersek her parça 25 olur."
+   ],
+   [
+    "1 metre kaç santimetredir?",
+    "100",
+    [
+     "10",
+     "1000",
+     "50"
+    ],
+    "1 m = 100 cm, 1 cm = 10 mm."
+   ],
+   [
+    "Hangisi bir çift sayıdır?",
+    "14",
+    [
+     "7",
+     "15",
+     "21"
+    ],
+    "Çift sayılar 2'ye kalansız bölünür."
+   ],
+   [
+    "45 + 38 kaçtır?",
+    "83",
+    [
+     "73",
+     "82",
+     "93"
+    ],
+    "45 + 38 = 45 + 40 − 2 = 83."
+   ]
+  ],
+  "spor": [
+   [
+    "Futbolda bir takım sahaya kaç oyuncuyla çıkar?",
+    "11",
+    [
+     "9",
+     "10",
+     "12"
+    ],
+    "Kaleci dahil her takımda 11 oyuncu bulunur."
+   ],
+   [
+    "Basketbolda bir serbest atış kaç sayıdır?",
+    "1",
+    [
+     "2",
+     "3",
+     "4"
+    ],
+    "Faul sonrası kullanılan her serbest atış 1 sayı değerindedir."
+   ],
+   [
+    "Olimpiyat bayrağında kaç halka vardır?",
+    "5",
+    [
+     "4",
+     "6",
+     "7"
+    ],
+    "Beş halka, kıtaların olimpiyatlarda bir araya gelişini simgeler."
+   ],
+   [
+    "Voleybolda bir takım sahada kaç oyuncuyla oynar?",
+    "6",
+    [
+     "5",
+     "7",
+     "11"
+    ],
+    "Voleybolda her takımın sahada 6 oyuncusu bulunur."
+   ],
+   [
+    "Kırkpınar'da yapılan geleneksel sporumuz hangisidir?",
+    "Yağlı güreş",
+    [
+     "Cirit",
+     "Okçuluk",
+     "Kayak"
+    ],
+    "Kırkpınar Yağlı Güreşleri dünyanın en eski spor organizasyonlarından biridir."
+   ],
+   [
+    "Satrançta oyunu kazanmak için hangi taşı mat etmek gerekir?",
+    "Şah",
+    [
+     "Vezir",
+     "Kale",
+     "Fil"
+    ],
+    "Şah kaçamayacak şekilde tehdit edilirse oyun 'mat' ile biter."
+   ],
+   [
+    "Olimpiyat Oyunları kaç yılda bir yapılır?",
+    "4",
+    [
+     "2",
+     "3",
+     "5"
+    ],
+    "Yaz ve Kış Olimpiyatları ikişer yıl arayla, her biri 4 yılda bir yapılır."
+   ],
+   [
+    "Hentbolda top vücudun hangi bölümüyle oynanır?",
+    "El",
+    [
+     "Ayak",
+     "Baş",
+     "Raket"
+    ],
+    "Hentbol adındaki 'hent', el anlamına gelen 'hand' kelimesinden gelir."
+   ],
+   [
+    "Teniste topa hangi araçla vurulur?",
+    "Raket",
+    [
+     "Sopa",
+     "Bat",
+     "Kürek"
+    ],
+    "Tenis, file üzerinden raketle oynanan bir spordur."
+   ],
+   [
+    "Yüzmede en hızlı yüzme stili hangisidir?",
+    "Serbest stil (kulaçlama)",
+    [
+     "Kurbağalama",
+     "Sırtüstü",
+     "Kelebek"
+    ],
+    "Serbest yarışlarda yüzücüler genellikle en hızlı stil olan kulaçlamayı kullanır."
+   ]
+  ],
+  "sanat": [
+   [
+    "Nasreddin Hoca fıkralarında hep hangi hayvanıyla anılır?",
+    "Eşeği",
+    [
+     "Atı",
+     "Kedisi",
+     "Devesi"
+    ],
+    "Nasreddin Hoca'nın türbesi Konya'nın Akşehir ilçesindedir."
+   ],
+   [
+    "Karagöz ile Hacivat hangi geleneksel sanatın karakterleridir?",
+    "Gölge oyunu",
+    [
+     "Kukla tiyatrosu",
+     "Opera",
+     "Bale"
+    ],
+    "Deriden yapılan tasvirler perde arkasından ışıkla oynatılır."
+   ],
+   [
+    "Hangisi ana renklerden biri değildir?",
+    "Yeşil",
+    [
+     "Kırmızı",
+     "Sarı",
+     "Mavi"
+    ],
+    "Yeşil, sarı ile mavinin karışımından elde edilir."
+   ],
+   [
+    "Sarı ile kırmızı karıştırılırsa hangi renk elde edilir?",
+    "Turuncu",
+    [
+     "Mor",
+     "Yeşil",
+     "Kahverengi"
+    ],
+    "İki ana rengin karışımına ara renk denir."
+   ],
+   [
+    "Bağlama hangi tür çalgıdır?",
+    "Telli çalgı",
+    [
+     "Vurmalı çalgı",
+     "Üflemeli çalgı",
+     "Tuşlu çalgı"
+    ],
+    "Bağlama (saz), Türk halk müziğinin en bilinen çalgısıdır."
+   ],
+   [
+    "Piyano hangi tür çalgıdır?",
+    "Tuşlu çalgı",
+    [
+     "Üflemeli çalgı",
+     "Telli-mızraplı çalgı",
+     "Vurmalı çalgı"
+    ],
+    "Tuşlara basılınca içerideki çekiçler tellere vurur."
+   ],
+   [
+    "Keloğlan hangi türün ünlü kahramanıdır?",
+    "Masal",
+    [
+     "Şiir",
+     "Roman",
+     "Destan"
+    ],
+    "Keloğlan masalları kuşaktan kuşağa sözlü olarak aktarılmıştır."
+   ],
+   [
+    "Kırmızı Başlıklı Kız masalında kötü karakter kimdir?",
+    "Kurt",
+    [
+     "Ayı",
+     "Tilki",
+     "Avcı"
+    ],
+    "Bu masal pek çok dilde anlatılan bir Avrupa halk masalıdır."
+   ]
+  ],
+  "gk": [
+   [
+    "Türkiye Cumhuriyeti'nin kurucusu kimdir?",
+    "Mustafa Kemal Atatürk",
+    [
+     "İsmet İnönü",
+     "Kâzım Karabekir",
+     "Fevzi Çakmak"
+    ],
+    "Atatürk, Türkiye Cumhuriyeti'nin kurucusu ve ilk cumhurbaşkanıdır."
+   ],
+   [
+    "Cumhuriyet hangi tarihte ilan edildi?",
+    "29 Ekim 1923",
+    [
+     "23 Nisan 1920",
+     "19 Mayıs 1919",
+     "30 Ağustos 1922"
+    ],
+    "Her yıl 29 Ekim'i Cumhuriyet Bayramı olarak kutlarız."
+   ],
+   [
+    "23 Nisan hangi bayramdır?",
+    "Ulusal Egemenlik ve Çocuk Bayramı",
+    [
+     "Zafer Bayramı",
+     "Cumhuriyet Bayramı",
+     "Gençlik ve Spor Bayramı"
+    ],
+    "23 Nisan 1920'de TBMM açıldı; Atatürk bu günü çocuklara armağan etti."
+   ],
+   [
+    "İstiklal Marşı'nın şairi kimdir?",
+    "Mehmet Akif Ersoy",
+    [
+     "Namık Kemal",
+     "Ziya Gökalp",
+     "Tevfik Fikret"
+    ],
+    "İstiklal Marşı 12 Mart 1921'de kabul edildi."
+   ],
+   [
+    "Güneş Sistemi'nin en büyük gezegeni hangisidir?",
+    "Jüpiter",
+    [
+     "Satürn",
+     "Dünya",
+     "Mars"
+    ],
+    "Jüpiter o kadar büyüktür ki içine 1300'den fazla Dünya sığabilir."
+   ],
+   [
+    "Bitkiler güneş ışığıyla kendi besinini üretir. Buna ne denir?",
+    "Fotosentez",
+    [
+     "Solunum",
+     "Sindirim",
+     "Buharlaşma"
+    ],
+    "Fotosentezde bitkiler karbondioksit ve suyu ışıkla besine çevirir, oksijen açığa çıkarır."
+   ],
+   [
+    "Gökkuşağında kaç renk vardır?",
+    "7",
+    [
+     "5",
+     "6",
+     "8"
+    ],
+    "Kırmızı, turuncu, sarı, yeşil, mavi, lacivert ve mor."
+   ],
+   [
+    "Saf su kaç derecede donar?",
+    "0 °C",
+    [
+     "10 °C",
+     "-10 °C",
+     "100 °C"
+    ],
+    "Saf su deniz seviyesinde 0 °C'de donar, 100 °C'de kaynar."
+   ],
+   [
+    "Dünyamızın doğal uydusu hangisidir?",
+    "Ay",
+    [
+     "Güneş",
+     "Mars",
+     "Venüs"
+    ],
+    "Ay, Dünya'nın etrafında yaklaşık 27 günde bir tur atar."
+   ],
+   [
+    "Örümceklerin kaç bacağı vardır?",
+    "8",
+    [
+     "6",
+     "4",
+     "10"
+    ],
+    "Örümcekler böcek değildir; 8 bacaklı eklem bacaklılardır."
+   ],
+   [
+    "Bal yapan hayvan hangisidir?",
+    "Arı",
+    [
+     "Kelebek",
+     "Karınca",
+     "Sinek"
+    ],
+    "Bal arıları çiçek özünü toplayıp kovanda bala dönüştürür."
+   ]
+  ]
+ },
+ "orta": {
+  "cog": [
+   [
+    "Türkiye kaç coğrafi bölgeye ayrılmıştır?",
+    "7",
+    [
+     "5",
+     "6",
+     "8"
+    ],
+    "Bölgeler 1941'deki Birinci Coğrafya Kongresi'nde belirlendi."
+   ],
+   [
+    "Ekvator'a paralel uzanan hayali çemberlere ne ad verilir?",
+    "Paralel",
+    [
+     "Meridyen",
+     "Enlem farkı",
+     "Dönence"
+    ],
+    "Meridyenler ise kutuptan kutba uzanan yarım çemberlerdir."
+   ],
+   [
+    "Türkiye'de en fazla yağış alan bölge hangisidir?",
+    "Karadeniz Bölgesi",
+    [
+     "Akdeniz Bölgesi",
+     "Ege Bölgesi",
+     "Marmara Bölgesi"
+    ],
+    "Özellikle Rize ve çevresi, nemli rüzgârlar sayesinde çok yağış alır."
+   ],
+   [
+    "Başlangıç (0°) meridyeni hangi şehirden geçer?",
+    "Londra (Greenwich)",
+    [
+     "Paris",
+     "Roma",
+     "İstanbul"
+    ],
+    "Greenwich Gözlemevi'nden geçen meridyen 1884'te başlangıç kabul edildi."
+   ],
+   [
+    "Dünyanın en yüksek dağı hangisidir?",
+    "Everest",
+    [
+     "K2",
+     "Kilimanjaro",
+     "Ağrı Dağı"
+    ],
+    "Everest Himalayalar'dadır; yüksekliği yaklaşık 8849 metredir."
+   ],
+   [
+    "Yüzölçümü en büyük ilimiz hangisidir?",
+    "Konya",
+    [
+     "Sivas",
+     "Ankara",
+     "Erzurum"
+    ],
+    "Konya, yaklaşık 38 bin km² ile en geniş ilimizdir."
+   ],
+   [
+    "Kapadokya'daki peri bacaları nasıl oluşmuştur?",
+    "Volkanik tüflerin aşınmasıyla",
+    [
+     "Buzulların erimesiyle",
+     "Deniz dalgalarıyla",
+     "Depremlerle"
+    ],
+    "Volkanların bıraktığı yumuşak tüfler, rüzgâr ve yağmurla aşınarak bu şekilleri aldı."
+   ],
+   [
+    "Türkiye topraklarının bulunduğu iki kıta hangileridir?",
+    "Asya ve Avrupa",
+    [
+     "Asya ve Afrika",
+     "Avrupa ve Afrika",
+     "Sadece Asya"
+    ],
+    "Topraklarımızın yaklaşık %97'si Asya'da (Anadolu), %3'ü Avrupa'da (Trakya)."
+   ],
+   [
+    "Avustralya'nın başkenti neresidir?",
+    "Kanberra",
+    [
+     "Sidney",
+     "Melbourne",
+     "Perth"
+    ],
+    "Sidney en büyük şehirdir ama başkent Kanberra'dır."
+   ],
+   [
+    "Akdeniz ikliminde yaygın olan bodur, yaz kış yeşil bitki örtüsü hangisidir?",
+    "Maki",
+    [
+     "Bozkır",
+     "Tundra",
+     "Savan"
+    ],
+    "Makiler kızılçam ormanlarının tahrip edildiği alanlarda yaygındır."
+   ],
+   [
+    "İstanbul Boğazı hangi iki denizi birbirine bağlar?",
+    "Karadeniz ve Marmara",
+    [
+     "Ege ve Marmara",
+     "Akdeniz ve Ege",
+     "Karadeniz ve Ege"
+    ],
+    "Çanakkale Boğazı ise Marmara'yı Ege Denizi'ne bağlar."
+   ],
+   [
+    "Ekvator'a yakın yerlerde genel olarak hava nasıldır?",
+    "Sıcak",
+    [
+     "Soğuk",
+     "Çok kurak ve soğuk",
+     "Her zaman karlı"
+    ],
+    "Güneş ışınları Ekvator'a dike yakın açılarla geldiği için buralar sıcaktır."
+   ]
+  ],
+  "tarih": [
+   [
+    "Malazgirt Meydan Muharebesi hangi yıl yapıldı?",
+    "1071",
+    [
+     "1453",
+     "1299",
+     "1176"
+    ],
+    "Sultan Alparslan'ın kazandığı bu savaşla Anadolu'nun kapıları Türklere açıldı."
+   ],
+   [
+    "Osmanlı Devleti'nin kurucusu kimdir?",
+    "Osman Bey",
+    [
+     "Orhan Bey",
+     "Ertuğrul Gazi",
+     "Fatih Sultan Mehmet"
+    ],
+    "Devlet adını kurucusu Osman Bey'den alır."
+   ],
+   [
+    "Orhun Yazıtları'nı diken Türk devleti hangisidir?",
+    "Göktürkler",
+    [
+     "Uygurlar",
+     "Hunlar",
+     "Selçuklular"
+    ],
+    "Türk adının geçtiği ilk Türkçe yazılı belgelerdir."
+   ],
+   [
+    "'Manda ve himaye kabul edilemez' kararı ilk kez hangi kongrede alındı?",
+    "Erzurum Kongresi",
+    [
+     "Sivas Kongresi",
+     "Amasya Genelgesi",
+     "Balıkesir Kongresi"
+    ],
+    "Erzurum Kongresi 23 Temmuz 1919'da toplandı."
+   ],
+   [
+    "Lozan Barış Antlaşması hangi yıl imzalandı?",
+    "1923",
+    [
+     "1920",
+     "1919",
+     "1938"
+    ],
+    "24 Temmuz 1923'te imzalanan antlaşma yeni Türk devletini uluslararası alanda tanıttı."
+   ],
+   [
+    "Türk kadınları milletvekili seçme ve seçilme hakkını hangi yıl kazandı?",
+    "1934",
+    [
+     "1923",
+     "1946",
+     "1950"
+    ],
+    "Bu hak, birçok Avrupa ülkesinden önce tanınmıştır."
+   ],
+   [
+    "İlk Türk matbaasını kuran kişi kimdir?",
+    "İbrahim Müteferrika",
+    [
+     "Piri Reis",
+     "Evliya Çelebi",
+     "Katip Çelebi"
+    ],
+    "Matbaa 1727'de İstanbul'da kuruldu."
+   ],
+   [
+    "Mohaç Meydan Muharebesi'ni kazanan Osmanlı padişahı kimdir?",
+    "Kanuni Sultan Süleyman",
+    [
+     "Yavuz Sultan Selim",
+     "II. Murat",
+     "Yıldırım Bayezid"
+    ],
+    "1526'daki bu savaş, kısa sürmesiyle ünlüdür."
+   ]
+  ],
+  "fen": [
+   [
+    "Suyun kimyasal formülü nedir?",
+    "H₂O",
+    [
+     "CO₂",
+     "O₂",
+     "NaCl"
+    ],
+    "İki hidrojen ve bir oksijen atomundan oluşur."
+   ],
+   [
+    "Katı bir maddenin sıvı olmadan doğrudan gaza dönüşmesine ne denir?",
+    "Süblimleşme",
+    [
+     "Erime",
+     "Yoğuşma",
+     "Donma"
+    ],
+    "Naftalin ve kuru buz süblimleşmeye örnektir."
+   ],
+   [
+    "Ses hangi ortamda yayılamaz?",
+    "Boşlukta",
+    [
+     "Havada",
+     "Suda",
+     "Demirde"
+    ],
+    "Ses yayılmak için tanecikli bir ortama ihtiyaç duyar."
+   ],
+   [
+    "Kuvvetin birimi nedir?",
+    "Newton",
+    [
+     "Joule",
+     "Watt",
+     "Kilogram"
+    ],
+    "Birim, Isaac Newton'ın adından gelir."
+   ],
+   [
+    "Asitlerin pH değeri için hangisi doğrudur?",
+    "7'den küçüktür",
+    [
+     "7'ye eşittir",
+     "7'den büyüktür",
+     "Her zaman 14'tür"
+    ],
+    "pH 7 nötr, 7'den büyük değerler baziktir."
+   ],
+   [
+    "Ay tutulmasında hangi gök cismi ortada bulunur?",
+    "Dünya",
+    [
+     "Ay",
+     "Güneş",
+     "Mars"
+    ],
+    "Dünya, Güneş ile Ay'ın arasına girer ve gölgesi Ay'ın üzerine düşer."
+   ],
+   [
+    "Atom çekirdeğinde bulunan pozitif yüklü tanecik hangisidir?",
+    "Proton",
+    [
+     "Elektron",
+     "Nötron",
+     "Foton"
+    ],
+    "Nötronlar yüksüzdür; elektronlar ise negatif yüklüdür ve çekirdeğin etrafında bulunur."
+   ],
+   [
+    "Bitki hücresinde bulunup hayvan hücresinde bulunmayan yapı hangisidir?",
+    "Hücre duvarı",
+    [
+     "Hücre zarı",
+     "Çekirdek",
+     "Mitokondri"
+    ],
+    "Hücre duvarı bitki hücresine destek ve dayanıklılık sağlar."
+   ]
+  ],
+  "mat": [
+   [
+    "2³ kaçtır?",
+    "8",
+    [
+     "6",
+     "9",
+     "5"
+    ],
+    "2 × 2 × 2 = 8."
+   ],
+   [
+    "Bir üçgenin iç açılarının toplamı kaç derecedir?",
+    "180°",
+    [
+     "90°",
+     "360°",
+     "270°"
+    ],
+    "Hangi şekilde olursa olsun tüm üçgenlerde toplam 180°'dir."
+   ],
+   [
+    "13 sayısı için hangisi doğrudur?",
+    "Asal sayıdır",
+    [
+     "Çift sayıdır",
+     "Tam karedir",
+     "10'un katıdır"
+    ],
+    "Asal sayılar yalnızca 1'e ve kendisine bölünür."
+   ],
+   [
+    "%25'i 20 olan sayı kaçtır?",
+    "80",
+    [
+     "50",
+     "100",
+     "40"
+    ],
+    "20, sayının dörtte biridir; 20 × 4 = 80."
+   ],
+   [
+    "√81 kaçtır?",
+    "9",
+    [
+     "8",
+     "27",
+     "40,5"
+    ],
+    "9 × 9 = 81."
+   ],
+   [
+    "Kenarları 6 cm ve 4 cm olan dikdörtgenin alanı kaçtır?",
+    "24 cm²",
+    [
+     "20 cm²",
+     "10 cm²",
+     "48 cm²"
+    ],
+    "Dikdörtgenin alanı = uzun kenar × kısa kenar."
+   ],
+   [
+    "(−3) × (−4) kaçtır?",
+    "12",
+    [
+     "−12",
+     "−7",
+     "7"
+    ],
+    "İki negatif sayının çarpımı pozitiftir."
+   ],
+   [
+    "0,5 ondalık sayısı hangi kesre eşittir?",
+    "1/2",
+    [
+     "1/5",
+     "5/100",
+     "2/5"
+    ],
+    "0,5 = 5/10 = 1/2."
+   ]
+  ],
+  "spor": [
+   [
+    "Modern Olimpiyat Oyunları ilk kez nerede yapıldı?",
+    "Atina (1896)",
+    [
+     "Paris (1900)",
+     "Londra (1908)",
+     "Roma (1960)"
+    ],
+    "Antik olimpiyatların doğduğu Yunanistan'a saygı olarak Atina seçildi."
+   ],
+   [
+    "Tarihi Kırkpınar Yağlı Güreşleri hangi ilimizde yapılır?",
+    "Edirne",
+    [
+     "Bursa",
+     "Kırklareli",
+     "Balıkesir"
+    ],
+    "Kırkpınar, 1360'lardan beri düzenlendiği kabul edilen bir gelenektir."
+   ],
+   [
+    "Basketbolu kim icat etmiştir?",
+    "James Naismith",
+    [
+     "Michael Jordan",
+     "Pierre de Coubertin",
+     "William Morgan"
+    ],
+    "Naismith, 1891'de ABD'de kapalı salonda oynanacak bir oyun olarak tasarladı."
+   ],
+   [
+    "Maraton koşusunun mesafesi ne kadardır?",
+    "42,195 km",
+    [
+     "21,1 km",
+     "40 km",
+     "50 km"
+    ],
+    "21,1 km'lik yarışa ise yarı maraton denir."
+   ],
+   [
+    "'Cep Herkülü' lakaplı Naim Süleymanoğlu hangi sporda şampiyon oldu?",
+    "Halter",
+    [
+     "Güreş",
+     "Boks",
+     "Judo"
+    ],
+    "Üç olimpiyatta (1988, 1992, 1996) altın madalya kazandı."
+   ],
+   [
+    "Voleybolda bir set (5. set hariç) kaç sayıda kazanılır?",
+    "25",
+    [
+     "15",
+     "21",
+     "30"
+    ],
+    "Set 25'te biter ama en az 2 sayı fark olmalıdır; 5. set 15 sayıdır."
+   ],
+   [
+    "2026 FIFA Dünya Kupası'nı hangi ülkeler birlikte düzenledi?",
+    "ABD, Kanada ve Meksika",
+    [
+     "Katar",
+     "Brezilya ve Arjantin",
+     "İspanya ve Portekiz"
+    ],
+    "2026 turnuvası 48 takımla oynanan ilk Dünya Kupası oldu."
+   ],
+   [
+    "Satranç tahtasında toplam kaç kare vardır?",
+    "64",
+    [
+     "49",
+     "81",
+     "100"
+    ],
+    "Tahta 8 sıra ve 8 sütundan oluşur: 8 × 8 = 64."
+   ],
+   [
+    "Tekvandonun doğduğu ülke hangisidir?",
+    "Kore",
+    [
+     "Japonya",
+     "Çin",
+     "Tayland"
+    ],
+    "Tekvando, ayak tekniklerinin ağırlıkta olduğu bir Kore dövüş sanatıdır."
+   ],
+   [
+    "Futbolda normal maç süresi kaç dakikadır?",
+    "90",
+    [
+     "60",
+     "80",
+     "120"
+    ],
+    "İki adet 45 dakikalık devreden oluşur; uzatmalar ayrıca eklenir."
+   ],
+   [
+    "Olimpiyat halkaları neyi simgeler?",
+    "Kıtaların birliğini",
+    [
+     "Beş sporu",
+     "İlk beş şampiyonu",
+     "Beş kurucu ülkeyi"
+    ],
+    "Halkaları Pierre de Coubertin 1913'te tasarladı."
+   ]
+  ],
+  "sanat": [
+   [
+    "Çalıkuşu romanının yazarı kimdir?",
+    "Reşat Nuri Güntekin",
+    [
+     "Halide Edib Adıvar",
+     "Ömer Seyfettin",
+     "Yakup Kadri Karaosmanoğlu"
+    ],
+    "Roman, öğretmen Feride'nin Anadolu'daki hayatını anlatır."
+   ],
+   [
+    "Dede Korkut Hikâyeleri'nde Basat'ın yendiği tek gözlü dev kimdir?",
+    "Tepegöz",
+    [
+     "Kaf Dağı devi",
+     "Zümrüdüanka",
+     "Şahmeran"
+    ],
+    "Basat, devi tek zayıf noktası olan gözünden vurarak yener."
+   ],
+   [
+    "Yıldızlı Gece tablosunun ressamı kimdir?",
+    "Vincent van Gogh",
+    [
+     "Pablo Picasso",
+     "Claude Monet",
+     "Leonardo da Vinci"
+    ],
+    "Van Gogh bu tabloyu 1889'da yaptı."
+   ],
+   [
+    "Mimar Sinan'ın 'ustalık eserim' dediği cami hangisidir?",
+    "Selimiye Camii",
+    [
+     "Süleymaniye Camii",
+     "Şehzade Camii",
+     "Sultanahmet Camii"
+    ],
+    "Selimiye Camii Edirne'dedir ve UNESCO Dünya Mirası listesindedir."
+   ],
+   [
+    "İşitme yetisini büyük ölçüde kaybettiği hâlde 9. Senfoni'yi besteleyen kimdir?",
+    "Beethoven",
+    [
+     "Mozart",
+     "Bach",
+     "Chopin"
+    ],
+    "9. Senfoni'nin son bölümündeki 'Neşeye Övgü' bugün Avrupa Birliği'nin marşıdır."
+   ],
+   [
+    "Âşık edebiyatında en çok kullanılan, genellikle 11'li hece ölçüsüyle yazılan nazım biçimi hangisidir?",
+    "Koşma",
+    [
+     "Gazel",
+     "Kaside",
+     "Mesnevi"
+    ],
+    "Gazel, kaside ve mesnevi divan edebiyatının nazım biçimleridir."
+   ],
+   [
+    "Kaplumbağa Terbiyecisi tablosunun ressamı kimdir?",
+    "Osman Hamdi Bey",
+    [
+     "Şeker Ahmet Paşa",
+     "İbrahim Çallı",
+     "Fikret Mualla"
+    ],
+    "Osman Hamdi Bey aynı zamanda İstanbul Arkeoloji Müzeleri'nin kurucusudur."
+   ],
+   [
+    "Yunus Emre hangi edebiyat geleneğinin şairidir?",
+    "Dinî-tasavvufi halk edebiyatı",
+    [
+     "Divan edebiyatı",
+     "Servet-i Fünun",
+     "Tanzimat edebiyatı"
+    ],
+    "Yunus Emre, sade Türkçesiyle yüzyıllardır sevilerek okunur."
+   ]
+  ],
+  "gk": [
+   [
+    "İstanbul hangi yıl fethedildi?",
+    "1453",
+    [
+     "1071",
+     "1299",
+     "1517"
+    ],
+    "İstanbul'u Fatih Sultan Mehmet fethetti; bu olay bir çağın kapanışı sayılır."
+   ],
+   [
+    "Kimyada 'O' sembolü hangi elementi gösterir?",
+    "Oksijen",
+    [
+     "Altın",
+     "Osmiyum",
+     "Ozon"
+    ],
+    "Altının sembolü ise Latince 'aurum'dan gelen Au'dur."
+   ],
+   [
+    "Mona Lisa tablosunu kim yaptı?",
+    "Leonardo da Vinci",
+    [
+     "Michelangelo",
+     "Picasso",
+     "Van Gogh"
+    ],
+    "Tablo bugün Paris'teki Louvre Müzesi'nde sergilenmektedir."
+   ],
+   [
+    "Işığın boşluktaki hızı yaklaşık ne kadardır?",
+    "300.000 km/s",
+    [
+     "3.000 km/s",
+     "30.000 km/s",
+     "3 milyon km/s"
+    ],
+    "Güneş'ten çıkan ışık Dünya'ya yaklaşık 8 dakikada ulaşır."
+   ],
+   [
+    "TBMM hangi tarihte açıldı?",
+    "23 Nisan 1920",
+    [
+     "29 Ekim 1923",
+     "19 Mayıs 1919",
+     "30 Ağustos 1922"
+    ],
+    "Meclisin ilk başkanı Mustafa Kemal Paşa'ydı."
+   ],
+   [
+    "Hücrenin 'enerji santrali' olarak bilinen organeli hangisidir?",
+    "Mitokondri",
+    [
+     "Ribozom",
+     "Çekirdek",
+     "Koful"
+    ],
+    "Mitokondri, besinlerden hücrenin kullanacağı enerjiyi üretir."
+   ],
+   [
+    "Atatürk Samsun'a hangi tarihte çıktı?",
+    "19 Mayıs 1919",
+    [
+     "23 Nisan 1920",
+     "9 Eylül 1922",
+     "29 Ekim 1923"
+    ],
+    "Bu tarih Millî Mücadele'nin başlangıcı kabul edilir."
+   ],
+   [
+    "Pi (π) sayısı yaklaşık kaçtır?",
+    "3,14",
+    [
+     "2,71",
+     "1,61",
+     "3,41"
+    ],
+    "Bir çemberin çevresinin çapına oranıdır."
+   ],
+   [
+    "İnsan vücudunun en büyük organı hangisidir?",
+    "Deri",
+    [
+     "Karaciğer",
+     "Akciğer",
+     "Beyin"
+    ],
+    "Deri vücudu mikroplardan, sıcaktan ve soğuktan korur."
+   ],
+   [
+    "Güneş'e en yakın gezegen hangisidir?",
+    "Merkür",
+    [
+     "Venüs",
+     "Mars",
+     "Dünya"
+    ],
+    "Merkür, Güneş Sistemi'nin en küçük gezegenidir."
+   ],
+   [
+    "Nutuk adlı eser kime aittir?",
+    "Mustafa Kemal Atatürk",
+    [
+     "Ziya Gökalp",
+     "Halide Edib Adıvar",
+     "Mehmet Akif Ersoy"
+    ],
+    "Atatürk Nutuk'u 1927'de TBMM'de altı gün boyunca okudu."
+   ],
+   [
+    "Dünya, Güneş etrafındaki bir turunu yaklaşık ne kadar sürede tamamlar?",
+    "365 gün",
+    [
+     "24 saat",
+     "30 gün",
+     "100 gün"
+    ],
+    "Bu yüzden 4 yılda bir Şubat 29 çeker; artan zaman böylece dengelenir."
+   ]
+  ]
+ },
+ "lise": {
+  "cog": [
+   [
+    "Türkiye'de en fazla nüfusu barındıran coğrafi bölge hangisidir?",
+    "Marmara Bölgesi",
+    [
+     "İç Anadolu Bölgesi",
+     "Ege Bölgesi",
+     "Karadeniz Bölgesi"
+    ],
+    "Sanayi, ticaret ve ulaşım olanakları nüfusu Marmara'da toplamıştır."
+   ],
+   [
+    "Türkiye'de depremlerin sık görülmesinin temel nedeni nedir?",
+    "Alp-Himalaya deprem kuşağında yer alması",
+    [
+     "Yer altı sularının fazla olması",
+     "Ekvator'a yakın olması",
+     "Okyanus kıyısında bulunması"
+    ],
+    "Anadolu levhası, Avrasya, Afrika ve Arap levhaları arasında sıkışmaktadır."
+   ],
+   [
+    "Pamukkale travertenleri hangi ilimizdedir?",
+    "Denizli",
+    [
+     "Muğla",
+     "Aydın",
+     "Nevşehir"
+    ],
+    "Kalsiyum karbonatlı termal suların çökelmesiyle oluşmuşlardır."
+   ],
+   [
+    "Tabanı geniş bir nüfus piramidi neyi gösterir?",
+    "Doğum oranının yüksek olduğunu",
+    [
+     "Yaşlı nüfusun fazla olduğunu",
+     "Nüfusun azaldığını",
+     "Göç vermediğini"
+    ],
+    "Genç nüfusu fazla olan ülkelerin piramidinin tabanı geniştir."
+   ],
+   [
+    "Muson iklimi en tipik olarak nerede görülür?",
+    "Güney ve Güneydoğu Asya",
+    [
+     "Kuzey Avrupa",
+     "Sahra Çölü",
+     "Antarktika"
+    ],
+    "Mevsimlik rüzgârlar yazın bol yağış getirir; Hindistan tipik örnektir."
+   ],
+   [
+    "Türkiye'nin en uzun kara sınırı hangi ülkeyledir?",
+    "Suriye",
+    [
+     "İran",
+     "Irak",
+     "Gürcistan"
+    ],
+    "Suriye sınırımız yaklaşık 900 km'yi aşar."
+   ],
+   [
+    "1:100.000 ölçekli haritada 5 cm, gerçekte kaç km'dir?",
+    "5 km",
+    [
+     "50 km",
+     "0,5 km",
+     "500 km"
+    ],
+    "Haritadaki 1 cm, gerçekte 100.000 cm yani 1 km'dir."
+   ],
+   [
+    "Rüzgâr hangi yönde eser?",
+    "Yüksek basınçtan alçak basınca",
+    [
+     "Alçak basınçtan yüksek basınca",
+     "Her zaman kuzeyden güneye",
+     "Denizden karaya"
+    ],
+    "Basınç farkı ne kadar büyükse rüzgâr o kadar hızlı eser."
+   ],
+   [
+    "Dünya'nın eksen eğikliği yaklaşık kaç derecedir?",
+    "23° 27′",
+    [
+     "45°",
+     "0°",
+     "66° 33′"
+    ],
+    "Eksen eğikliği mevsimlerin oluşmasının temel nedenidir."
+   ]
+  ],
+  "tarih": [
+   [
+    "375'te başlayan Kavimler Göçü'ne yol açan Türk topluluğu hangisidir?",
+    "Hunlar",
+    [
+     "Göktürkler",
+     "Uygurlar",
+     "Peçenekler"
+    ],
+    "Göç, Batı Roma İmparatorluğu'nun yıkılışını hızlandırdı."
+   ],
+   [
+    "Kâğıdın İslam dünyasına yayılmasında etkili olduğu kabul edilen savaş hangisidir?",
+    "Talas Savaşı (751)",
+    [
+     "Malazgirt Savaşı",
+     "Dandanakan Savaşı",
+     "Kösedağ Savaşı"
+    ],
+    "Bu savaşta esir alınan Çinli ustaların kâğıt yapımını öğrettiği kabul edilir."
+   ],
+   [
+    "Tanzimat Fermanı hangi yıl ilan edildi?",
+    "1839",
+    [
+     "1856",
+     "1876",
+     "1908"
+    ],
+    "Ferman, Gülhane Parkı'nda okunduğu için Gülhane Hatt-ı Hümayunu olarak da bilinir."
+   ],
+   [
+    "Osmanlı Devleti'nin ilk anayasası hangisidir?",
+    "Kanun-i Esasi",
+    [
+     "Islahat Fermanı",
+     "Sened-i İttifak",
+     "Teşkilat-ı Esasiye"
+    ],
+    "1876'da I. Meşrutiyet'in ilanıyla yürürlüğe girdi."
+   ],
+   [
+    "Mondros Ateşkes Antlaşması hangi yıl imzalandı?",
+    "1918",
+    [
+     "1914",
+     "1920",
+     "1923"
+    ],
+    "30 Ekim 1918'de imzalanan antlaşma, Osmanlı için I. Dünya Savaşı'nı bitirdi."
+   ],
+   [
+    "Tevhid-i Tedrisat Kanunu hangi alanda düzenleme yapmıştır?",
+    "Eğitim ve öğretimin birleştirilmesi",
+    [
+     "Ölçü birimleri",
+     "Kılık kıyafet",
+     "Takvim"
+    ],
+    "1924'te çıkarılan kanunla bütün okullar Maarif Vekâleti'ne bağlandı."
+   ],
+   [
+    "Türkiye'de çok partili ilk genel seçim hangi yıl yapıldı?",
+    "1946",
+    [
+     "1923",
+     "1950",
+     "1960"
+    ],
+    "1950 seçimleriyle ise ilk kez iktidar seçimle değişti."
+   ],
+   [
+    "Türkiye 1952'de hangi askerî ittifaka katıldı?",
+    "NATO",
+    [
+     "Varşova Paktı",
+     "CENTO",
+     "SEATO"
+    ],
+    "NATO 1949'da kuruldu; Türkiye ve Yunanistan 1952'de üye oldu."
+   ]
+  ],
+  "fen": [
+   [
+    "Periyodik tabloda soy gazlar hangi gruptadır?",
+    "8A (18. grup)",
+    [
+     "1A (1. grup)",
+     "2A (2. grup)",
+     "7A (17. grup)"
+    ],
+    "Helyum, neon ve argon gibi soy gazlar kolay tepkimeye girmez."
+   ],
+   [
+    "Newton'un ikinci hareket yasasının formülü hangisidir?",
+    "F = m · a",
+    [
+     "E = m · c²",
+     "V = I · R",
+     "P = m · v"
+    ],
+    "Kuvvet, kütle ile ivmenin çarpımına eşittir."
+   ],
+   [
+    "Fotosentez hücrenin hangi organelinde gerçekleşir?",
+    "Kloroplast",
+    [
+     "Mitokondri",
+     "Ribozom",
+     "Golgi cisimciği"
+    ],
+    "Kloroplastlar yeşil renk veren klorofil pigmentini içerir."
+   ],
+   [
+    "Beyaz ışığın prizmadan geçerken renklere ayrılmasına ne denir?",
+    "Dağılma (dispersiyon)",
+    [
+     "Yansıma",
+     "Soğurma",
+     "Girişim"
+    ],
+    "Her renk farklı miktarda kırıldığı için ışık renklerine ayrılır."
+   ],
+   [
+    "Avogadro sayısı yaklaşık kaçtır?",
+    "6,02 × 10²³",
+    [
+     "3 × 10⁸",
+     "9,81",
+     "1,6 × 10⁻¹⁹"
+    ],
+    "1 mol maddede bu kadar tanecik bulunur."
+   ],
+   [
+    "Bezelyeler üzerindeki deneyleriyle 'kalıtımın babası' kabul edilen bilim insanı kimdir?",
+    "Gregor Mendel",
+    [
+     "Charles Darwin",
+     "Louis Pasteur",
+     "Robert Hooke"
+    ],
+    "Mendel'in çalışmaları genetiğin temelini oluşturur."
+   ],
+   [
+    "Elektriksel direncin birimi nedir?",
+    "Ohm",
+    [
+     "Volt",
+     "Amper",
+     "Watt"
+    ],
+    "Ohm yasasına göre V = I · R."
+   ],
+   [
+    "Mitoz bölünme sonunda oluşan hücreler için hangisi doğrudur?",
+    "Kromozom sayıları ana hücreyle aynıdır",
+    [
+     "Kromozom sayıları yarıya iner",
+     "Dört hücre oluşur",
+     "Yalnızca üreme hücrelerinde görülür"
+    ],
+    "Mitoz büyüme ve onarımı sağlar; mayozda kromozom sayısı yarıya iner."
+   ]
+  ],
+  "mat": [
+   [
+    "log₁₀ 1000 kaçtır?",
+    "3",
+    [
+     "2",
+     "10",
+     "100"
+    ],
+    "10³ = 1000 olduğu için log₁₀ 1000 = 3."
+   ],
+   [
+    "5! (5 faktöriyel) kaçtır?",
+    "120",
+    [
+     "25",
+     "60",
+     "20"
+    ],
+    "5! = 5 × 4 × 3 × 2 × 1 = 120."
+   ],
+   [
+    "x² − 9 = 0 denkleminin köklerinin çarpımı kaçtır?",
+    "−9",
+    [
+     "9",
+     "0",
+     "3"
+    ],
+    "Kökler 3 ve −3'tür; çarpımları −9."
+   ],
+   [
+    "sin 30° kaçtır?",
+    "1/2",
+    [
+     "√3/2",
+     "1",
+     "√2/2"
+    ],
+    "30-60-90 üçgeninde 30°'nin karşısındaki kenar, hipotenüsün yarısıdır."
+   ],
+   [
+    "Bir zar atıldığında çift sayı gelme olasılığı kaçtır?",
+    "1/2",
+    [
+     "1/6",
+     "1/3",
+     "2/3"
+    ],
+    "Çift sonuçlar 2, 4, 6'dır: 6 sonuçtan 3'ü."
+   ],
+   [
+    "3, 7, 11, ... aritmetik dizisinin 10. terimi kaçtır?",
+    "39",
+    [
+     "43",
+     "40",
+     "35"
+    ],
+    "aₙ = a₁ + (n−1)·d = 3 + 9·4 = 39."
+   ],
+   [
+    "Yarıçapı 3 cm olan dairenin alanı kaçtır?",
+    "9π cm²",
+    [
+     "6π cm²",
+     "3π cm²",
+     "9 cm²"
+    ],
+    "Dairenin alanı = π · r²."
+   ],
+   [
+    "f(x) = 2x + 3 ise f(4) kaçtır?",
+    "11",
+    [
+     "8",
+     "14",
+     "9"
+    ],
+    "f(4) = 2 · 4 + 3 = 11."
+   ]
+  ],
+  "spor": [
+   [
+    "Olimpiyat tarihinin en çok madalya kazanan sporcusu kimdir?",
+    "Michael Phelps",
+    [
+     "Usain Bolt",
+     "Carl Lewis",
+     "Larisa Latınina"
+    ],
+    "ABD'li yüzücü Phelps, 23'ü altın olmak üzere 28 olimpiyat madalyası kazandı."
+   ],
+   [
+    "'Asrın Güreşçisi' unvanını alan Hamza Yerlikaya hangi stilde güreşti?",
+    "Grekoromen",
+    [
+     "Serbest",
+     "Yağlı güreş",
+     "Sumo"
+    ],
+    "Yerlikaya 1996 ve 2000 olimpiyatlarında altın madalya kazandı."
+   ],
+   [
+    "Teniste 'Grand Slam' kaç turnuvadan oluşur?",
+    "4",
+    [
+     "3",
+     "5",
+     "6"
+    ],
+    "Avustralya Açık, Fransa Açık (Roland Garros), Wimbledon ve ABD Açık."
+   ],
+   [
+    "Atletizmde dekatlon kaç branştan oluşur?",
+    "10",
+    [
+     "5",
+     "7",
+     "12"
+    ],
+    "Erkekler dekatlonu iki günde tamamlanan 10 farklı yarıştır."
+   ],
+   [
+    "Futbolda hangi durumda ofsayt olmaz?",
+    "Taç atışından gelen topta",
+    [
+     "Serbest vuruştan gelen topta",
+     "Kafa pasından gelen topta",
+     "Orta sahadan atılan pasta"
+    ],
+    "Taç, kale vuruşu ve korner atışından doğrudan gelen topta ofsayt uygulanmaz."
+   ],
+   [
+    "Hangisi bir Kış Olimpiyatları sporudur?",
+    "Curling",
+    [
+     "Hentbol",
+     "Voleybol",
+     "Okçuluk"
+    ],
+    "Curling'de taşlar buz üzerinde hedefe kaydırılır."
+   ],
+   [
+    "Basketbolda (FIBA kuralları) hücum süresi kaç saniyedir?",
+    "24",
+    [
+     "30",
+     "20",
+     "35"
+    ],
+    "Takım bu sürede pota çemberine dokunan bir atış yapmalıdır."
+   ],
+   [
+    "Dünya Anti-Doping Ajansı'nın kısaltması nedir?",
+    "WADA",
+    [
+     "FIFA",
+     "UEFA",
+     "IOC"
+    ],
+    "WADA, sporda yasaklı madde kullanımına karşı mücadele eder."
+   ]
+  ],
+  "sanat": [
+   [
+    "Sefiller romanının yazarı kimdir?",
+    "Victor Hugo",
+    [
+     "Charles Dickens",
+     "Lev Tolstoy",
+     "Honoré de Balzac"
+    ],
+    "Roman, Jean Valjean'ın hikâyesini 19. yüzyıl Fransa'sında anlatır."
+   ],
+   [
+    "Nobel Edebiyat Ödülü'nü kazanan ilk Türk yazar kimdir?",
+    "Orhan Pamuk",
+    [
+     "Yaşar Kemal",
+     "Nazım Hikmet",
+     "Elif Şafak"
+    ],
+    "Orhan Pamuk ödülü 2006'da aldı."
+   ],
+   [
+    "Memleketimden İnsan Manzaraları kimin eseridir?",
+    "Nazım Hikmet",
+    [
+     "Orhan Veli",
+     "Cemal Süreya",
+     "Necip Fazıl Kısakürek"
+    ],
+    "Nazım Hikmet serbest şiirin Türk edebiyatındaki öncülerindendir."
+   ],
+   [
+    "Aşk-ı Memnu romanının yazarı kimdir?",
+    "Halit Ziya Uşaklıgil",
+    [
+     "Namık Kemal",
+     "Ahmet Mithat Efendi",
+     "Peyami Safa"
+    ],
+    "Roman, Servet-i Fünun döneminin en önemli eserlerindendir."
+   ],
+   [
+    "Türk edebiyatının ilk yerli romanı kabul edilen eser hangisidir?",
+    "Taaşşuk-ı Talat ve Fıtnat",
+    [
+     "İntibah",
+     "Araba Sevdası",
+     "Vatan yahut Silistre"
+    ],
+    "Şemsettin Sami'nin bu romanı 1872'de yayımlandı."
+   ],
+   [
+    "Sistina Şapeli'nin tavan fresklerini kim yaptı?",
+    "Michelangelo",
+    [
+     "Raffaello",
+     "Leonardo da Vinci",
+     "Rembrandt"
+    ],
+    "Michelangelo bu çalışmayı 1508–1512 yılları arasında tamamladı."
+   ],
+   [
+    "Kuyucaklı Yusuf romanının yazarı kimdir?",
+    "Sabahattin Ali",
+    [
+     "Sait Faik Abasıyanık",
+     "Orhan Kemal",
+     "Kemal Tahir"
+    ],
+    "Sabahattin Ali'nin ünlü eserlerinden biri de Kürk Mantolu Madonna'dır."
+   ],
+   [
+    "Dört Mevsim adlı keman konçertolarının bestecisi kimdir?",
+    "Antonio Vivaldi",
+    [
+     "Johann Sebastian Bach",
+     "Wolfgang Amadeus Mozart",
+     "Frédéric Chopin"
+    ],
+    "Vivaldi, Barok dönemin İtalyan bestecisidir."
+   ]
+  ],
+  "gk": [
+   [
+    "Birleşmiş Milletler'in genel merkezi hangi şehirdedir?",
+    "New York",
+    [
+     "Cenevre",
+     "Brüksel",
+     "Paris"
+    ],
+    "BM 1945'te kuruldu; genel merkezi New York'tadır."
+   ],
+   [
+    "World Wide Web'i (WWW) geliştiren bilim insanı kimdir?",
+    "Tim Berners-Lee",
+    [
+     "Bill Gates",
+     "Steve Jobs",
+     "Alan Turing"
+    ],
+    "Berners-Lee, WWW'yi 1989'da CERN'de çalışırken önerdi."
+   ],
+   [
+    "Enflasyon neyi ifade eder?",
+    "Genel fiyat düzeyinin sürekli artmasını",
+    [
+     "Faiz oranlarının düşmesini",
+     "İşsizliğin azalmasını",
+     "İhracatın artmasını"
+    ],
+    "Enflasyon arttıkça paranın satın alma gücü azalır."
+   ],
+   [
+    "Anayasamıza göre yasama yetkisi kime aittir?",
+    "Türkiye Büyük Millet Meclisi",
+    [
+     "Cumhurbaşkanı",
+     "Anayasa Mahkemesi",
+     "Bakanlar"
+    ],
+    "Yasama yetkisi Türk Milleti adına TBMM'nindir ve devredilemez."
+   ],
+   [
+    "Nobel Ödülleri (Barış Ödülü hariç) hangi ülkede verilir?",
+    "İsveç",
+    [
+     "Norveç",
+     "İsviçre",
+     "Danimarka"
+    ],
+    "Nobel Barış Ödülü ise Norveç'in başkenti Oslo'da verilir."
+   ],
+   [
+    "Makinelerin düşünüp düşünemeyeceğini sınamak için ünlü bir test öneren bilim insanı kimdir?",
+    "Alan Turing",
+    [
+     "Albert Einstein",
+     "Nikola Tesla",
+     "Isaac Newton"
+    ],
+    "Turing, bilgisayar biliminin kurucularından kabul edilir."
+   ],
+   [
+    "Türkiye'de milletvekili seçimlerinde oy kullanma yaşı kaçtır?",
+    "18",
+    [
+     "16",
+     "21",
+     "25"
+    ],
+    "18 yaşını dolduran her Türk vatandaşı seçimlerde oy kullanabilir."
+   ],
+   [
+    "Ana dil olarak en çok konuşulan dil hangisidir?",
+    "Mandarin Çincesi",
+    [
+     "İngilizce",
+     "İspanyolca",
+     "Hintçe"
+    ],
+    "Toplam konuşucu sayısında ise İngilizce öne çıkar."
+   ]
+  ]
+ }
+}
